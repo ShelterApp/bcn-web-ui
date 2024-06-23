@@ -1,0 +1,75 @@
+export const GET_SERVICES: string = "GET_SERVICES";
+export const GET_SERVICES_REDUCER: string = "GET_SERVICES_REDUCER";
+export const SET_LOADING: string = "SET_LOADING";
+export const LIKE_SERVICE_REQUEST: string = "LIKE_SERVICE_REQUEST";
+export const SET_QUERY_SERVICE: string = "SET_QUERY_SERVICE";
+export const REFRESH_SERVICES_REQUEST: string = "REFRESH_SERVICES_REQUEST";
+export const SET_CURRENT_LOCATION: string = "SET_CURRENT_LOCATION";
+export const SET_CURRENT_LOCATION_REQUEST: string =
+  "SET_CURRENT_LOCATION_REQUEST";
+export const SET_LOADING_MORE: string = "SET_LOADING_MORE";
+export const SET_LOADING_LOCATION: string = "SET_LOADING_LOCATION";
+export const UPDATE_LIST_SERVICES: string = "UPDATE_LIST_SERVICES";
+export const LOADMORE_SERVICES_REQUEST: string = "LOADMORE_SERVICES_REQUEST";
+export const SET_CAN_LOADING_MORE: string = "SET_CAN_LOADING_MORE";
+export const GET_MY_FAVORITES_REQUEST: string = "GET_MY_FAVORITES_REQUEST";
+export const SET_MY_FAVORITES: string = "SET_MY_FAVORITES";
+
+export const UPDATE_CRISIS_LINES: string = "UPDATE_CRISIS_LINES";
+export const SET_CRISIS_LINES: string = "SET_CRISIS_LINES";
+export const GET_CRISISLINES_REQUEST: string = "GET_CRISISLINES_REQUEST";
+export const LOADMORE_CRISISLINES_REQUEST: string =
+  "LOADMORE_CRISISLINES_REQUEST";
+
+export const SET_QUERY_SEARCH_SERVICE: string = "SET_QUERY_SEARCH_SERVICE";
+export const DELETE_SERVICE_REQUEST: string = "DELETE_SERVICE_REQUEST";
+
+export const UPDATE_FEEDBACKS: string = "UPDATE_FEEDBACKS";
+export const SET_FEEDBACKS: string = "SET_FEEDBACKS";
+export const GET_FEEDBACKS_REQUEST: string = "GET_FEEDBACKS_REQUEST";
+export const LOADMORE_FEEDBACKS_REQUEST: string = "LOADMORE_FEEDBACKS_REQUEST";
+
+export const SET_CRISISLINE_DETAIL: string = "SET_CRISISLINE_DETAIL";
+export const GET_CRISISLINE_REQUEST: string = "GET_CRISISLINE_REQUEST";
+export const DELETE_CRISISLINE_REQUEST: string = "DELETE_CRISISLINE_REQUEST";
+
+export const GET_CRITICAL_HEADER: string = "GET_CRITICAL_HEADER";
+export const SET_CRITICAL_HEADER: string = "SET_CRITICAL_HEADER";
+export const GET_BEDS_REDUCER: string = "GET_BEDS_REDUCER";
+export const UPDATE_BEDS_REDUCER: string = "UPDATE_BEDS_REDUCER";
+
+export const GET_USERS_REQUEST: string = "GET_USERS_REQUEST";
+export const LOADMORE_USERS_REQUEST: string = "LOADMORE_USERS_REQUEST";
+export const UPDATE_USERS: string = "UPDATE_USERS";
+export const SET_USERS: string = "SET_USERS";
+export const UPDATE_PERMISSION_REQUEST: string = "UPDATE_PERMISSION_REQUEST";
+export const DELETE_USERS_REQUEST: string = "DELETE_USERS_REQUEST";
+export const GET_USER_REQUEST: string = "GET_USER_REQUEST";
+export const SET_USER_DETAIL: string = "SET_USER_DETAIL";
+export const SET_QUERY_MANAGE_SERVICE: string = "SET_QUERY_MANAGE_SERVICE";
+
+export const GET_LIAISONS_REQUEST: string = "GET_LIAISONS_REQUEST";
+export const LOADMORE_LIAISONS_REQUEST: string = "LOADMORE_LIAISONS_REQUEST";
+export const DELETE_LIAISON_REQUEST: string = "DELETE_LIAISON_REQUEST";
+export const UPDATE_LIAISONS: string = "UPDATE_LIAISONS";
+export const SET_LIAISONS: string = "SET_LIAISONS";
+export const SET_LIAISON: string = "SET_LIAISON";
+export const GET_LIAISON_REQUEST: string = "GET_LIAISON_REQUEST";
+export const SET_GROUP_LIAISONS: string = "SET_GROUP_LIAISONS";
+
+export const GET_REGIONS_REQUEST: string = "GET_REGIONS_REQUEST";
+export const LOADMORE_REGIONS_REQUEST: string = "LOADMORE_REGIONS_REQUEST";
+export const DELETE_REGION_REQUEST: string = "DELETE_REGION_REQUEST";
+export const UPDATE_REGIONS: string = "UPDATE_REGIONS";
+export const SET_REGIONS: string = "SET_REGIONS";
+export const SET_REGION: string = "SET_REGION";
+export const GET_REGION_REQUEST: string = "GET_REGION_REQUEST";
+
+export const GET_UNITS_REQUEST: string = "GET_UNITS_REQUEST";
+export const LOADMORE_UNITS_REQUEST: string = "LOADMORE_UNITS_REQUEST";
+export const DELETE_UNIT_REQUEST: string = "DELETE_UNIT_REQUEST";
+export const UPDATE_UNITS: string = "UPDATE_UNITS";
+export const SET_UNIT: string = "SET_UNIT";
+export const GET_UNIT_REQUEST: string = "GET_UNIT_REQUEST";
+export const SET_GROUP_UNITS: string = "SET_GROUP_UNITS";
+export const SET_UNITS: string = "SET_UNITS";
