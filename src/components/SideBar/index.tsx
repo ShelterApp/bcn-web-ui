@@ -160,7 +160,7 @@ const SideBar = React.memo((props: SideBarProps) => {
             <Divider />
             <ListItem className={classes.optMenu} button>
                 <ListItemIcon>
-                    <IosTime color="#472F92" fontSize="18px" />
+                    <IosTime color="#5A6EB7" fontSize="18px" />
                 </ListItemIcon>
                 <ListItemText primary={translate("OPEN_SERVICES")} />
                 <Typography component="div">
@@ -234,7 +234,7 @@ const SideBar = React.memo((props: SideBarProps) => {
             <Divider />
             <ListItem className={classes.optMenu} button>
                 <ListItemIcon>
-                    <IosMapOutline color="#472F92" fontSize="18px" />
+                    <IosMapOutline color="#5A6EB7" fontSize="18px" />
                 </ListItemIcon>
                 <ListItemText primary={translate("MAP_VIEW")} />
                 <Typography component="div">
@@ -261,7 +261,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                 <>
                     <ListItem className={classes.optMenu} button>
                         <ListItemIcon>
-                            <MdThumbsUp color="#472F92" fontSize="18px" />
+                            <MdThumbsUp color="#5A6EB7" fontSize="18px" />
                         </ListItemIcon>
                         <ListItemText primary={translate("TOP_KUDOS")} />
                         <Typography component="div">
@@ -448,7 +448,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                         button
                     >
                         <ListItemIcon>
-                            <IosKeypad color="#472F92" fontSize="18px" />
+                            <IosKeypad color="#5A6EB7" fontSize="18px" />
                         </ListItemIcon>
                         <Badge
                             max={9999}
@@ -472,7 +472,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                         button
                     >
                         <ListItemIcon>
-                            <IosHappy color="#472F92" fontSize="18px" />
+                            <IosHappy color="#5A6EB7" fontSize="18px" />
                         </ListItemIcon>
                         <Badge
                             max={9999}
@@ -501,7 +501,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                         >
                             <ListItemIcon>
                                 <MdCheckmarkCircle
-                                    color="#472F92"
+                                    color="#5A6EB7"
                                     fontSize="18px"
                                 />
                             </ListItemIcon>
@@ -532,7 +532,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                                 button
                             >
                                 <ListItemIcon>
-                                    <MdUnlock color="#472F92" fontSize="18px" />
+                                    <MdUnlock color="#5A6EB7" fontSize="18px" />
                                 </ListItemIcon>
                                 <Badge
                                     max={9999}
@@ -561,7 +561,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                                 //   button
                                 // >
                                 //   <ListItemIcon>
-                                //     <MdUnlock color="#472F92" fontSize="18px" />
+                                //     <MdUnlock color="#5A6EB7" fontSize="18px" />
                                 //   </ListItemIcon>
                                 //   <Badge
                                 //     max={9999}
@@ -581,7 +581,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                                 //   button
                                 // >
                                 //   <ListItemIcon>
-                                //     <MdPersonAdd color="#472F92" fontSize="18px" />
+                                //     <MdPersonAdd color="#5A6EB7" fontSize="18px" />
                                 //   </ListItemIcon>
                                 //   <Badge
                                 //     max={9999}
@@ -602,7 +602,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                             >
                                 <ListItemIcon>
                                     <MdPersonAdd
-                                        color="#472F92"
+                                        color="#5A6EB7"
                                         fontSize="18px"
                                     />
                                 </ListItemIcon>
@@ -634,7 +634,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                             >
                                 <ListItemIcon>
                                     <MdContact
-                                        color="#472F92"
+                                        color="#5A6EB7"
                                         fontSize="18px"
                                     />
                                 </ListItemIcon>
@@ -696,7 +696,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                         button
                     >
                         <ListItemIcon>
-                            <IosCreate color="#472F92" fontSize="18px" />
+                            <IosCreate color="#5A6EB7" fontSize="18px" />
                         </ListItemIcon>
                         <ListItemText primary={translate("GIVE_FEEDBACK")} />
                     </ListItem>
@@ -707,7 +707,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                         button
                     >
                         <ListItemIcon>
-                            <MdClipboard color="#472F92" fontSize="18px" />
+                            <MdClipboard color="#5A6EB7" fontSize="18px" />
                         </ListItemIcon>
                         <ListItemText primary={translate("TERMS_OF_USE")} />
                     </ListItem>

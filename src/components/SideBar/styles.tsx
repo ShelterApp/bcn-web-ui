@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     toolbar: {
       minHeight: 44,
-      backgroundColor: "#472F92",
+      backgroundColor: "#5A6EB7",
       color: "#fff",
       lineHeight: "44px",
       "& p": {
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     optMenu: {
       fontSize: 14,
-      color: "#472F92",
+      color: "#5A6EB7",
       paddingLeft: 6,
       paddingRight: 6,
       "& .MuiListItemIcon-root": {
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
       cursor: "pointer"
     },
     selectActive: {
-      backgroundColor: "#472F92"
+      backgroundColor: "#5A6EB7"
     },
     borderRadiusLeft: {
       borderRadius: "3px 0 0 3px"
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     iconM: {
       fontSize: 18,
-      color: "#472F92"
+      color: "#5A6EB7"
     },
     badge: {
       top: "15px !important",
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     userTieIcon: {
       fontSize: 18,
-      color: "#472F92"
+      color: "#5A6EB7"
     }
   })
 );
