@@ -15,7 +15,7 @@ import { Dispatch } from "redux";
 import HeaderBarSub from "components/HeaderBarSub";
 import Loading from "components/Loading";
 import FeedbacksContainer from "containers/FeedbacksContainer";
-import { Feedback } from "@fywinnv/core/dist/models";
+import { Feedback } from "@bcn/core/dist/models";
 import { useTranslation } from "react-i18next";
 import GridFullHeight from "components/GridFullHeight";
 import GridFormContainer from "components/GridFormContainer";

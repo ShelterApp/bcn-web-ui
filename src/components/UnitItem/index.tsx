@@ -1,7 +1,7 @@
 import React from "react";
 import useStyles from "./styles";
 import clsx from "clsx";
-// import { Unit } from "@fywinnv/core";
+// import { Unit } from "@bcn/core";
 // import IconButton from "@material-ui/core/IconButton";
 // import IosCreate from "react-ionicons/lib/IosCreate";
 // import MdTrash from "react-ionicons/lib/MdTrash";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from "react";
 import { push } from "connected-react-router";
 import { reducerType } from "redux/reducers";

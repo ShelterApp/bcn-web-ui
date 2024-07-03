@@ -83,19 +83,19 @@ const HomePage = React.memo((props: HomeProps) => {
   const [serviceNameFlag, setServiceNameFlag] = useState("");
   const [openFlag, setOpenFlag] = useState(false);
   const [isMapView, setIsMapView] = useState(
-    Boolean(JSON.parse(sessionStorage.getItem("@fywinnv_isMapView")))
+    Boolean(JSON.parse(sessionStorage.getItem("@bcn_isMapView")))
   );
   const [isOpenService, setIsOpenService] = useState(
-    Boolean(JSON.parse(sessionStorage.getItem("@fywinnv_isOpen")))
+    Boolean(JSON.parse(sessionStorage.getItem("@bcn_isOpen")))
   );
   const [category, setCategory] = useState(
-    convertSelected(JSON.parse(sessionStorage.getItem("@fywinnv_category")))
+    convertSelected(JSON.parse(sessionStorage.getItem("@bcn_category")))
   );
 
   const [tabName, setTabName] = useState("Shelter");
 
   const queryServices = cate => {
-    sessionStorage.setItem("@fywinnv_category", JSON.stringify(cate));
+    sessionStorage.setItem("@bcn_category", JSON.stringify(cate));
     window.scrollTo(0, 0);
     setCategory(cate);
     var query = queryData;
@@ -149,7 +149,7 @@ const HomePage = React.memo((props: HomeProps) => {
   };
 
   const setOpenServices = open => {
-    sessionStorage.setItem("@fywinnv_isOpen", JSON.stringify(open));
+    sessionStorage.setItem("@bcn_isOpen", JSON.stringify(open));
     window.scrollTo(0, 0);
     var query = queryData;
 
@@ -177,7 +177,7 @@ const HomePage = React.memo((props: HomeProps) => {
   };
 
   const openMapView = open => {
-    sessionStorage.setItem("@fywinnv_isMapView", JSON.stringify(open));
+    sessionStorage.setItem("@bcn_isMapView", JSON.stringify(open));
     setIsMapView(open);
   };
 

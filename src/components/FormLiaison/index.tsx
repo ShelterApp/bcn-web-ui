@@ -10,7 +10,7 @@ import SubmitButton from "components/Button";
 import { useTranslation } from "react-i18next";
 import Alert from "@material-ui/lab/Alert";
 import imgLoading from "asset/img/loading.gif";
-import { Liaison as ILiaison } from "@fywinnv/core";
+import { Liaison as ILiaison } from "@bcn/core";
 import { useDispatch } from "react-redux";
 import { SET_MESSAGES_REDUCER } from "redux/reducers/messages/actionTypes";
 import { createLiaison, updateLiaison } from "api/liaisons";

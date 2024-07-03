@@ -61,7 +61,7 @@ const ServiceDetail = React.memo((props: ServiceDetailProps) => {
   };
 
   const goBackUrl = url => {
-    sessionStorage.setItem("@fywinnvGoBack", JSON.stringify(true));
+    sessionStorage.setItem("@bcnGoBack", JSON.stringify(true));
     dispatch(goBack());
   };
 

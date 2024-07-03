@@ -10,7 +10,7 @@ import styles from "./styles";
 import GridFullHeight from "components/GridFullHeight";
 import GridFormContainer from "components/GridFormContainer";
 import Loading from "components/Loading";
-import { User } from "@fywinnv/core";
+import { User } from "@bcn/core";
 import Input from "components/Input";
 import {
   GET_USERS_REQUEST,

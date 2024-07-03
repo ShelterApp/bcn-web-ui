@@ -4,7 +4,7 @@ import { removeEmptyObject } from "common/helpers";
 export const chatboxAPI = async params => {
   try {
     const location = JSON.parse(
-      sessionStorage.getItem("@fywinnv_location_value_chatbox")
+      sessionStorage.getItem("@bcn_location_value_chatbox")
     );
     const res = await axios.post(
       `/bot/query`,

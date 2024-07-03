@@ -58,9 +58,9 @@ const HeaderBarSub = React.memo((props: HeaderBarProps) => {
 
   const clickFavorite = () => {
     if (!serviceId) return;
-    const res = localStorage.getItem("@fywinnv_favorite");
+    const res = localStorage.getItem("@bcn_favorite");
     if (!res) {
-      localStorage.setItem("@fywinnv_favorite", JSON.stringify([serviceId]));
+      localStorage.setItem("@bcn_favorite", JSON.stringify([serviceId]));
       setIsFavorite(true);
       setFlashMessage(true);
       return;
@@ -70,7 +70,7 @@ const HeaderBarSub = React.memo((props: HeaderBarProps) => {
       const isFound = afterRes.includes(serviceId);
       if (isFound) {
         localStorage.setItem(
-          "@fywinnv_favorite",
+          "@bcn_favorite",
           JSON.stringify(afterRes.filter(fil => fil !== serviceId))
         );
         setIsFavorite(false);
@@ -78,7 +78,7 @@ const HeaderBarSub = React.memo((props: HeaderBarProps) => {
         return;
       }
       localStorage.setItem(
-        "@fywinnv_favorite",
+        "@bcn_favorite",
         JSON.stringify([...afterRes, serviceId])
       );
       setIsFavorite(true);
@@ -99,7 +99,7 @@ const HeaderBarSub = React.memo((props: HeaderBarProps) => {
 
   React.useEffect(() => {
     if (serviceId) {
-      const res = localStorage.getItem("@fywinnv_favorite");
+      const res = localStorage.getItem("@bcn_favorite");
       if (!res) return;
       const afterRes = JSON.parse(res);
       if (afterRes) {

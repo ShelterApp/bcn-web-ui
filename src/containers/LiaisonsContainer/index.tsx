@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import styles from "./styles";
-import { Liaison } from "@fywinnv/core";
+import { Liaison } from "@bcn/core";
 // import CircularProgress from "@material-ui/core/CircularProgress";
 import LiaisonItem from "components/LiaisonItem";
 import { reducerType } from "redux/reducers";

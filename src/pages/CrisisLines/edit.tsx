@@ -9,7 +9,7 @@ import styles from "./styles";
 import FormCrisisLine from "components/FormCrisisLine";
 import GridFullHeight from "components/GridFullHeight";
 import GridFormContainer from "components/GridFormContainer";
-import { CrisisLine } from "@fywinnv/core";
+import { CrisisLine } from "@bcn/core";
 import { GET_CRISISLINE_REQUEST } from "redux/reducers/service/actionTypes";
 import Loading from "components/Loading";
 import { useTranslation } from "react-i18next";

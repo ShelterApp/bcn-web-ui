@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import styles from "./styles";
-import { Region } from "@fywinnv/core";
+import { Region } from "@bcn/core";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import RegionItem from "components/RegionItem";
 import { reducerType } from "redux/reducers";

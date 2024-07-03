@@ -35,9 +35,7 @@ const HeaderBar = React.memo((props: HeaderBarProps) => {
     props.clickOpenMenu(!menuIsOpen);
   };
   React.useEffect(() => {
-    if (
-      Boolean(JSON.parse(sessionStorage.getItem("@fywinnv_block_location")))
-    ) {
+    if (Boolean(JSON.parse(sessionStorage.getItem("@bcn_block_location")))) {
       setChooseLocate(true);
     }
   }, []);

@@ -27,7 +27,7 @@ import {
 import { UserRole, optionType } from "common/";
 import GridFullHeight from "components/GridFullHeight";
 import GridFormContainer from "components/GridFormContainer";
-import { Service as IServiceProps, User as IUserProps } from "@fywinnv/core";
+import { Service as IServiceProps, User as IUserProps } from "@bcn/core";
 import { useSelector } from "react-redux";
 import { createService, updateService } from "api/services/createService";
 import { SET_MESSAGES_REDUCER } from "redux/reducers/messages/actionTypes";

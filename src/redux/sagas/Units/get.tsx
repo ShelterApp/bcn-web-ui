@@ -2,7 +2,7 @@ import { call, put, takeLatest, select } from "redux-saga/effects";
 import { getUnits } from "api/units";
 import * as types from "redux/reducers/service/actionTypes";
 import { SKIP } from "common/";
-import { Unit as IUnit } from "@fywinnv/core";
+import { Unit as IUnit } from "@bcn/core";
 import { groupUnits } from "common";
 
 export const getCurrentUnits = state => state.service.units;

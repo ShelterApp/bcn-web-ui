@@ -1,4 +1,4 @@
-import { Service as IServiceProps } from "@fywinnv/core";
+import { Service as IServiceProps } from "@bcn/core";
 export const PageSize: number = 100;
 
 export const tranformSelected = selected => {
@@ -36,11 +36,11 @@ export interface QueryServiceProps {
   category?: string;
   isCriticalHeader?: boolean;
 }
-const currentLocation = sessionStorage.getItem("@fywinnv_current_location");
+const currentLocation = sessionStorage.getItem("@bcn_current_location");
 
-const category = JSON.parse(sessionStorage.getItem("@fywinnv_category"));
+const category = JSON.parse(sessionStorage.getItem("@bcn_category"));
 const isTopKudos = Boolean(
-  JSON.parse(sessionStorage.getItem("@fywinnv_isTopKudos"))
+  JSON.parse(sessionStorage.getItem("@bcn_isTopKudos"))
 );
 export interface ServiceProps extends IServiceProps {
   distance: number;

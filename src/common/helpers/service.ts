@@ -1,6 +1,6 @@
-import { calculateTimeOpenCloseService } from "@fywinnv/core/dist/utils/services";
+import { calculateTimeOpenCloseService } from "@bcn/core/dist/utils/services";
 import dayjs from "dayjs";
-import { ScheduleType } from "@fywinnv/core";
+import { ScheduleType } from "@bcn/core";
 
 export const tranformSchedules = props => {
   const { translate } = props;

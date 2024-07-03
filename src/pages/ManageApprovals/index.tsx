@@ -16,7 +16,7 @@ import Loading from "components/Loading";
 import MSService from "containers/MSServiceContainer";
 import { ServiceProps, searchByName } from "common/";
 import Alert from "components/Alert";
-import { ServiceType } from "@fywinnv/core";
+import { ServiceType } from "@bcn/core";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Grid from "@material-ui/core/Grid";
 import PButton from "components/Button";

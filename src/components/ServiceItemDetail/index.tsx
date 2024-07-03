@@ -14,7 +14,7 @@ import Typography from "@material-ui/core/Typography";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import PhoneIcon from "@material-ui/icons/Phone";
 import { parseURL, tranformSchedulesForm } from "common/";
-import { ScheduleCategory } from "@fywinnv/core";
+import { ScheduleCategory } from "@bcn/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -50,8 +50,8 @@ const ServiceItem = React.memo((props: ServiceItemProps) => {
     onClickReport,
     onClickClaim
   } = props;
-  let toLang = JSON.parse(localStorage.getItem("@fywinnv_language"))
-    ? JSON.parse(localStorage.getItem("@fywinnv_language"))
+  let toLang = JSON.parse(localStorage.getItem("@bcn_language"))
+    ? JSON.parse(localStorage.getItem("@bcn_language"))
     : "en";
 
   const summary =

@@ -9,7 +9,7 @@ import styles from "./styles";
 import FormRegion from "components/FormRegion";
 import GridFullHeight from "components/GridFullHeight";
 import GridFormContainer from "components/GridFormContainer";
-import { Region } from "@fywinnv/core";
+import { Region } from "@bcn/core";
 import { GET_REGION_REQUEST } from "redux/reducers/service/actionTypes";
 import Loading from "components/Loading";
 import { useTranslation } from "react-i18next";

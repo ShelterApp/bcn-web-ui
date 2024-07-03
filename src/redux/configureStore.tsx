@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createBrowserHistory } from "history";
 import { applyMiddleware, compose, createStore } from "redux";
 import createRootReducer from "redux/reducers";

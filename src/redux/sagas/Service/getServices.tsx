@@ -33,9 +33,7 @@ function* getListServices(action) {
         yield put({ type: types.SET_QUERY_SERVICE, queryData: _query });
       }
     } else {
-      const currentLocation = sessionStorage.getItem(
-        "@fywinnv_current_location"
-      );
+      const currentLocation = sessionStorage.getItem("@bcn_current_location");
 
       _query = {
         ...params

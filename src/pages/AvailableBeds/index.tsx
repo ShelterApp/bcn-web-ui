@@ -5,7 +5,7 @@ import { push } from "connected-react-router";
 import { reducerType } from "redux/reducers";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { Service } from "@fywinnv/core";
+import { Service } from "@bcn/core";
 import {
   GET_BEDS_REDUCER,
   UPDATE_BEDS_REDUCER

@@ -2,7 +2,7 @@ import { call, put, takeLatest, select } from "redux-saga/effects";
 import { getCrisisLines } from "api/services/getCrisisLines";
 import * as types from "redux/reducers/service/actionTypes";
 import { DIRECTION, LIMIT, SKIP, SORT } from "common/";
-import { CrisisLine as CrisisLineProp } from "@fywinnv/core";
+import { CrisisLine as CrisisLineProp } from "@bcn/core";
 
 export const getCurrentLines = state => state.service.crisis_lines;
 

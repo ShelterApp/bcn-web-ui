@@ -9,7 +9,7 @@ import styles from "./styles";
 import FormUnit from "components/FormUnit";
 import GridFullHeight from "components/GridFullHeight";
 import GridFormContainer from "components/GridFormContainer";
-import { Unit as IUnit } from "@fywinnv/core";
+import { Unit as IUnit } from "@bcn/core";
 import { GET_UNIT_REQUEST } from "redux/reducers/service/actionTypes";
 import Loading from "components/Loading";
 import { getRegions } from "api/regions";

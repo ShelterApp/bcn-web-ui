@@ -9,7 +9,7 @@ import SubmitButton from "components/Button";
 import { useTranslation } from "react-i18next";
 import Alert from "@material-ui/lab/Alert";
 import imgLoading from "asset/img/loading.gif";
-import { User } from "@fywinnv/core";
+import { User } from "@bcn/core";
 import { useDispatch } from "react-redux";
 import { SET_MESSAGES_REDUCER } from "redux/reducers/messages/actionTypes";
 import { updateUser, updatePermissionUser } from "api/services/getUsers";

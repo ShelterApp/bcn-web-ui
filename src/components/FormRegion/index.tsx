@@ -9,7 +9,7 @@ import SubmitButton from "components/Button";
 import { useTranslation } from "react-i18next";
 import Alert from "@material-ui/lab/Alert";
 import imgLoading from "asset/img/loading.gif";
-import { Region as IRegion } from "@fywinnv/core";
+import { Region as IRegion } from "@bcn/core";
 import { useDispatch } from "react-redux";
 import { SET_MESSAGES_REDUCER } from "redux/reducers/messages/actionTypes";
 import { createRegion, updateRegion } from "api/regions";

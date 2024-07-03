@@ -8,7 +8,7 @@ import {
   tranformDayInWeek,
   tranformWeekInMonth
 } from "common/";
-import { ScheduleType, Service as IServiceProps } from "@fywinnv/core";
+import { ScheduleType, Service as IServiceProps } from "@bcn/core";
 import dayjs from "dayjs";
 import Input from "components/Input";
 import GridFullHeight from "components/GridFullHeight";

@@ -65,7 +65,7 @@ const SwipeableTextMobileStepper = React.memo((props: BreakingNewsProps) => {
   };
 
   React.useEffect(() => {
-    if (!Boolean(JSON.parse(sessionStorage.getItem("@fywinnvGoBack")))) {
+    if (!Boolean(JSON.parse(sessionStorage.getItem("@bcnGoBack")))) {
       window.scrollTo(0, 0);
     }
   }, []);

@@ -2,7 +2,7 @@ import { call, put, takeLatest, select } from "redux-saga/effects";
 import { getFeedbacks } from "api/feedbacks/get";
 import * as types from "redux/reducers/service/actionTypes";
 import { DIRECTION, LIMIT, SKIP, SORT } from "common/";
-import { Feedback as FeedbackProps } from "@fywinnv/core/dist/models";
+import { Feedback as FeedbackProps } from "@bcn/core/dist/models";
 
 export const getCurrentFeedbacks = state => state.service.feedbacks;
 

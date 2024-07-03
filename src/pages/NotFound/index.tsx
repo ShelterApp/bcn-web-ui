@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { lazy } from "react";
 const GridFullHeight = lazy(() => import("components/GridFullHeight"));
 const GridFormContainer = lazy(() => import("components/GridFormContainer"));

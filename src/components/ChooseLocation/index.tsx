@@ -87,7 +87,7 @@ const SearchBar = React.memo((props: SearchBarProps) => {
 
   useEffect(() => {
     if (isOpenSearch) {
-      let _val = JSON.parse(sessionStorage.getItem("@fywinnv_location_value"));
+      let _val = JSON.parse(sessionStorage.getItem("@bcn_location_value"));
       if (_val) {
         setValue(_val);
       }
@@ -96,9 +96,9 @@ const SearchBar = React.memo((props: SearchBarProps) => {
 
   const onClear = () => {
     setValue("");
-    sessionStorage.removeItem("@fywinnv_location_value_chatbox");
-    sessionStorage.removeItem("@fywinnv_location_value");
-    sessionStorage.removeItem("@fywinnv_locationMapview");
+    sessionStorage.removeItem("@bcn_location_value_chatbox");
+    sessionStorage.removeItem("@bcn_location_value");
+    sessionStorage.removeItem("@bcn_locationMapview");
     let _query = queryData;
     _query = removeFilter(_query, "zip");
     _query = removeFilter(_query, "state");
@@ -130,9 +130,9 @@ const SearchBar = React.memo((props: SearchBarProps) => {
 
   const setCurrentLocation = () => {
     setValue(translate("CURRENT_LOCATION"));
-    sessionStorage.setItem("@fywinnv_block_location", JSON.stringify(false));
+    sessionStorage.setItem("@bcn_block_location", JSON.stringify(false));
     sessionStorage.setItem(
-      "@fywinnv_location_value",
+      "@bcn_location_value",
       JSON.stringify(translate("CURRENT_LOCATION"))
     );
 
@@ -153,7 +153,7 @@ const SearchBar = React.memo((props: SearchBarProps) => {
 
     clickOpenSearch(false);
     sessionStorage.setItem(
-      "@fywinnv_locationMapview",
+      "@bcn_locationMapview",
       JSON.stringify({
         lat: currentLocation.latitude,
         lng: currentLocation.longitude
@@ -162,12 +162,9 @@ const SearchBar = React.memo((props: SearchBarProps) => {
   };
 
   const setLocation = (text, filter, state = null, location = null) => {
-    sessionStorage.setItem("@fywinnv_block_location", JSON.stringify(false));
-    sessionStorage.setItem("@fywinnv_location_value", JSON.stringify(text));
-    sessionStorage.setItem(
-      "@fywinnv_location_value_chatbox",
-      JSON.stringify(text)
-    );
+    sessionStorage.setItem("@bcn_block_location", JSON.stringify(false));
+    sessionStorage.setItem("@bcn_location_value", JSON.stringify(text));
+    sessionStorage.setItem("@bcn_location_value_chatbox", JSON.stringify(text));
 
     let _query = queryData;
     _query = removeFilter(_query, "zip");
@@ -191,7 +188,7 @@ const SearchBar = React.memo((props: SearchBarProps) => {
 
     clickOpenSearch(false);
     sessionStorage.setItem(
-      "@fywinnv_locationMapview",
+      "@bcn_locationMapview",
       JSON.stringify({
         lat: location.coordinates[1],
         lng: location.coordinates[0]

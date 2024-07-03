@@ -8,7 +8,7 @@ import { push } from "connected-react-router";
 import { reducerType } from "redux/reducers";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { Region } from "@fywinnv/core";
+import { Region } from "@bcn/core";
 import HeaderBarSub from "components/HeaderBarSub";
 import Loading from "components/Loading";
 import RegionsContainer from "containers/RegionContainer";

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import styles from "./styles";
-import { Feedback } from "@fywinnv/core/dist/models";
+import { Feedback } from "@bcn/core/dist/models";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import FeedbackItem from "./components/FeedbackItem";
 import Lightbox from "react-image-lightbox";

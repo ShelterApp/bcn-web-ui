@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["dom", "dom.iterable", "esnext", "es6"],
+    "maxNodeModuleJsDepth": 2,
     "allowJs": true,
     "checkJs": false,
     "skipLibCheck": true,
@@ -18,10 +19,14 @@
     "jsx": "preserve",
     "strictNullChecks": false,
     "rootDirs": ["src", "stories"],
+    "types": [],
     "baseUrl": "src"
   },
   "include": ["src"],
-  "linterOptions": {
-    "exclude": ["src/**"]
-  }
+  "exclude": [
+    "node_modules",
+    "./node_modules",
+    "./node_modules/*",
+    "./node_modules/@types/node/index.d.ts"
+  ]
 }

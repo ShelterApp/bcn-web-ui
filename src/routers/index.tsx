@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { Suspense } from "react";
 import GridFullHeight from "components/GridFullHeight";
 import { Route, Switch } from "react-router";

@@ -2,7 +2,7 @@ import { call, put, takeLatest, select } from "redux-saga/effects";
 import { getLiaisons } from "api/liaisons";
 import * as types from "redux/reducers/service/actionTypes";
 import { SKIP } from "common/";
-import { Liaison as LiaisonProp } from "@fywinnv/core";
+import { Liaison as LiaisonProp } from "@bcn/core";
 import { groupLiaisons } from "common";
 
 export const getCurrentLiaisons = state => state.service.liaisons;

@@ -10,7 +10,7 @@ import IconButton from "@material-ui/core/IconButton";
 import clsx from "clsx";
 import styles from "./styles";
 
-import { ScheduleCategory } from "@fywinnv/core";
+import { ScheduleCategory } from "@bcn/core";
 
 import { useTranslation } from "react-i18next";
 
@@ -64,8 +64,8 @@ const ServiceItem = React.memo((props: ServiceItemProps) => {
     contactEmail,
     isShowFlag
   } = service;
-  let toLang = JSON.parse(localStorage.getItem("@fywinnv_language"))
-    ? JSON.parse(localStorage.getItem("@fywinnv_language"))
+  let toLang = JSON.parse(localStorage.getItem("@bcn_language"))
+    ? JSON.parse(localStorage.getItem("@bcn_language"))
     : "en";
   React.useEffect(() => {
     if (likes) {

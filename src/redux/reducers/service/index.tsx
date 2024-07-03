@@ -6,8 +6,8 @@ import {
   initQuerySearch,
   ServiceProps
 } from "common/";
-import { User, CrisisLine, Liaison, Region, Unit } from "@fywinnv/core";
-import { Feedback } from "@fywinnv/core/dist/models";
+import { User, CrisisLine, Liaison, Region, Unit } from "@bcn/core";
+import { Feedback } from "@bcn/core/dist/models";
 
 export interface ICoords {
   latitude: number;
@@ -41,7 +41,7 @@ export interface ServiceReducer {
   unit: Unit;
 }
 
-const currentLocation = sessionStorage.getItem("@fywinnv_current_location");
+const currentLocation = sessionStorage.getItem("@bcn_current_location");
 
 const initial = {
   data: [] as ServiceProps[],

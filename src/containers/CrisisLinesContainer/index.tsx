@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import styles from "./styles";
-import { CrisisLine } from "@fywinnv/core";
+import { CrisisLine } from "@bcn/core";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import CrisisLineItem from "components/CrisisLineItem";
 import { reducerType } from "redux/reducers";

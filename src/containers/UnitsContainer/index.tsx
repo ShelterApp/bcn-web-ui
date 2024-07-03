@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import styles from "./styles";
-// import { Unit } from "@fywinnv/core";
+// import { Unit } from "@bcn/core";
 import UnitItem from "components/UnitItem";
 import { reducerType } from "redux/reducers";
 import { useSelector, useDispatch } from "react-redux";

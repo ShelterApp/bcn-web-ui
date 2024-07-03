@@ -8,7 +8,7 @@ import {
 import * as types from "redux/reducers/service/actionTypes";
 import { SET_MESSAGES_REDUCER } from "redux/reducers/messages/actionTypes";
 import { DIRECTION, LIMIT, SKIP, SORT } from "common/";
-import { User } from "@fywinnv/core";
+import { User } from "@bcn/core";
 import produce from "immer";
 import i18n from "i18n";
 

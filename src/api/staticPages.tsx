@@ -1,8 +1,8 @@
 import axios from "./configApi";
 
 export const getAboutPage = async () => {
-  const lang = JSON.parse(localStorage.getItem("@fywinnv_language"))
-    ? JSON.parse(localStorage.getItem("@fywinnv_language"))
+  const lang = JSON.parse(localStorage.getItem("@bcn_language"))
+    ? JSON.parse(localStorage.getItem("@bcn_language"))
     : "en";
   const url = lang === "en" ? "/static-pages/ABOUT" : "/static-pages/ABOUT_ES";
   try {
@@ -15,8 +15,8 @@ export const getAboutPage = async () => {
 };
 
 export const getTermsPage = async () => {
-  const lang = JSON.parse(localStorage.getItem("@fywinnv_language"))
-    ? JSON.parse(localStorage.getItem("@fywinnv_language"))
+  const lang = JSON.parse(localStorage.getItem("@bcn_language"))
+    ? JSON.parse(localStorage.getItem("@bcn_language"))
     : "en";
   const url = lang === "en" ? "/static-pages/TERMS" : "/static-pages/TERMS_ES";
   try {
@@ -30,8 +30,8 @@ export const getTermsPage = async () => {
 
 export const getPrivacyPage = async () => {
   try {
-    const lang = JSON.parse(localStorage.getItem("@fywinnv_language"))
-      ? JSON.parse(localStorage.getItem("@fywinnv_language"))
+    const lang = JSON.parse(localStorage.getItem("@bcn_language"))
+      ? JSON.parse(localStorage.getItem("@bcn_language"))
       : "en";
     const url =
       lang === "en" ? "/static-pages/PRIVACY" : "/static-pages/PRIVACY_ES";

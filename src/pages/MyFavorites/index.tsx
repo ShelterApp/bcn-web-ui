@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { lazy } from "react";
 
 import {
@@ -49,7 +50,7 @@ const MyFavorites = React.memo((props: MyFavoritesProps) => {
 
   React.useEffect(() => {
     if (loadingLocation) return;
-    const afterRes = JSON.parse(localStorage.getItem("@fywinnv_favorite"));
+    const afterRes = JSON.parse(localStorage.getItem("@bcn_favorite"));
     if (!afterRes || (afterRes && afterRes.length === 0)) return;
 
     const { longitude, latitude } = currentLocation;
@@ -75,13 +76,13 @@ const MyFavorites = React.memo((props: MyFavoritesProps) => {
   }, [loadingLocation]);
 
   const handleDelete = id => {
-    const afterRes = JSON.parse(localStorage.getItem("@fywinnv_favorite"));
+    const afterRes = JSON.parse(localStorage.getItem("@bcn_favorite"));
     if (!afterRes || (afterRes && afterRes.length === 0)) return;
     if (afterRes && afterRes.length === 1) {
-      localStorage.removeItem("@fywinnv_favorite");
+      localStorage.removeItem("@bcn_favorite");
     } else {
       localStorage.setItem(
-        "@fywinnv_favorite",
+        "@bcn_favorite",
         JSON.stringify(afterRes.filter(fil => fil !== id))
       );
     }

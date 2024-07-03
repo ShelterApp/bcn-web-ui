@@ -57,20 +57,20 @@ const ScrollableTabs = React.memo((props: TabPanelProps) => {
   const { dispatch, getFilter, setIsOpenSearch } = props;
   const translate = useTranslation().t;
   const [value, setValue] = React.useState(
-    sessionStorage.getItem("@fywinnv_tab_filter")
-      ? types.indexOf(JSON.parse(sessionStorage.getItem("@fywinnv_tab_filter")))
+    sessionStorage.getItem("@bcn_tab_filter")
+      ? types.indexOf(JSON.parse(sessionStorage.getItem("@bcn_tab_filter")))
       : 1
   );
   const [filters, setFilters] = React.useState<string[]>(params[value].filters);
   const [valueFilter, setValueFilter] = React.useState(
-    sessionStorage.getItem("@fywinnv_tab_filter_sub")
-      ? JSON.parse(sessionStorage.getItem("@fywinnv_tab_filter_sub"))
+    sessionStorage.getItem("@bcn_tab_filter_sub")
+      ? JSON.parse(sessionStorage.getItem("@bcn_tab_filter_sub"))
       : "All"
   );
 
   React.useEffect(() => {
-    if (Boolean(JSON.parse(sessionStorage.getItem("@fywinnvGoBack")))) {
-      sessionStorage.setItem("@fywinnvGoBack", JSON.stringify(false));
+    if (Boolean(JSON.parse(sessionStorage.getItem("@bcnGoBack")))) {
+      sessionStorage.setItem("@bcnGoBack", JSON.stringify(false));
     } else {
       window.scrollTo(0, 0);
       if (types.includes(props.router.hash.replace("#", ""))) {
@@ -88,11 +88,8 @@ const ScrollableTabs = React.memo((props: TabPanelProps) => {
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     // setIsOpenSearch(false);
 
-    sessionStorage.setItem(
-      "@fywinnv_tab_filter",
-      JSON.stringify(types[newValue])
-    );
-    sessionStorage.setItem("@fywinnv_tab_filter_sub", JSON.stringify("All"));
+    sessionStorage.setItem("@bcn_tab_filter", JSON.stringify(types[newValue]));
+    sessionStorage.setItem("@bcn_tab_filter_sub", JSON.stringify("All"));
     window.scrollTo(0, 0);
     setValue(newValue);
     setFilters(params[newValue].filters);
@@ -108,7 +105,7 @@ const ScrollableTabs = React.memo((props: TabPanelProps) => {
   const handleChangeFilter = (filter: string) => {
     window.scrollTo(0, 0);
     setValueFilter(filter);
-    sessionStorage.setItem("@fywinnv_tab_filter_sub", JSON.stringify(filter));
+    sessionStorage.setItem("@bcn_tab_filter_sub", JSON.stringify(filter));
     if (!props.isOpenSearch) getFilter({ type: types[value], q: filter });
   };
 

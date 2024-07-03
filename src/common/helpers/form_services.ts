@@ -3,7 +3,7 @@ import {
   ScheduleCategory,
   ServiceType,
   DayPeriod
-} from "@fywinnv/core";
+} from "@bcn/core";
 import { tranformType, weekInMonth } from "./service";
 import i18n from "../../i18n";
 

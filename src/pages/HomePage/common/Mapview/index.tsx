@@ -4,7 +4,7 @@ import markerRed from "asset/img/red-dot.png";
 import markerGreen from "asset/img/green-dot.png";
 import { ICoords } from "redux/reducers/service";
 import { ServiceProps } from "common/";
-import { ScheduleType } from "@fywinnv/core";
+import { ScheduleType } from "@bcn/core";
 import ServiceItem from "components/ServiceItem";
 import styles from "./styles";
 import { tranformSchedules } from "common/";
@@ -23,7 +23,7 @@ const MapView = forwardRef((props: MapViewProps, _ref: React.Ref<any>) => {
   const translate = useTranslation().t;
   const { currentLocation, services, openUrl, queryServicesByLocation } = props;
   const _locateSelected = JSON.parse(
-    sessionStorage.getItem("@fywinnv_locationMapview")
+    sessionStorage.getItem("@bcn_locationMapview")
   );
   const locateSelected =
     _locateSelected && typeof _locateSelected === "object"

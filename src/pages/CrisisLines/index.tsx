@@ -9,7 +9,7 @@ import { push } from "connected-react-router";
 import { reducerType } from "redux/reducers";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { CrisisLine } from "@fywinnv/core";
+import { CrisisLine } from "@bcn/core";
 
 import HeaderBarSub from "components/HeaderBarSub";
 import Loading from "components/Loading";

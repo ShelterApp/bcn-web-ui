@@ -2,8 +2,8 @@ import axios from "./configApi";
 
 export const translateGoogle = async text => {
   try {
-    let toLang = JSON.parse(localStorage.getItem("@fywinnv_language"))
-      ? JSON.parse(localStorage.getItem("@fywinnv_language"))
+    let toLang = JSON.parse(localStorage.getItem("@bcn_language"))
+      ? JSON.parse(localStorage.getItem("@bcn_language"))
       : "en";
     let fromLang = toLang === "es" ? "en" : "es";
     let obj = {

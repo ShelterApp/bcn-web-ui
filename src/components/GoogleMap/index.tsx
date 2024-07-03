@@ -9,7 +9,7 @@ import markerBRed from "asset/img/pinBRed.svg";
 import markerBGreen from "asset/img/pinBGreen.svg";
 import { ICoords } from "redux/reducers/service";
 import { ServiceProps } from "common/";
-import { ScheduleType } from "@fywinnv/core";
+import { ScheduleType } from "@bcn/core";
 
 interface MapViewProps {
   service: ServiceProps;

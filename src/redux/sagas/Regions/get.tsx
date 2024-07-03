@@ -2,7 +2,7 @@ import { call, put, takeLatest, select } from "redux-saga/effects";
 import { getRegions } from "api/regions";
 import * as types from "redux/reducers/service/actionTypes";
 import { SKIP } from "common/";
-import { Region as RegionProp } from "@fywinnv/core";
+import { Region as RegionProp } from "@bcn/core";
 
 export const getCurrentRegions = state => state.service.regions;
 

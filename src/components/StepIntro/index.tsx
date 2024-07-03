@@ -36,14 +36,14 @@ const StepIntro = React.memo((props: StepIntroProps) => {
   const { stepNumber, goToSlide, openUrl } = props;
   const translate = useTranslation().t;
   const [language, setLanguage] = React.useState(
-    JSON.parse(localStorage.getItem("@fywinnv_language"))
-      ? JSON.parse(localStorage.getItem("@fywinnv_language"))
+    JSON.parse(localStorage.getItem("@bcn_language"))
+      ? JSON.parse(localStorage.getItem("@bcn_language"))
       : "en"
   );
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     localStorage.setItem(
-      "@fywinnv_language",
+      "@bcn_language",
       JSON.stringify(event.target.value as string)
     );
     setLanguage(event.target.value as string);
@@ -245,7 +245,7 @@ const StepIntro = React.memo((props: StepIntroProps) => {
             </Button>
             <Button
               onClick={() => {
-                Cookie.set("@fywinnv_alreadyaccess", JSON.stringify(true));
+                Cookie.set("@bcn_alreadyaccess", JSON.stringify(true));
                 openUrl("/");
               }}
               className={classes.ml7}

@@ -28,7 +28,7 @@ function* setCurrentLocation(action) {
         queryData: _query
       });
       sessionStorage.setItem(
-        "@fywinnv_current_location",
+        "@bcn_current_location",
         JSON.stringify(action.currentLocation)
       );
     } else {
@@ -39,7 +39,7 @@ function* setCurrentLocation(action) {
         type: types.SET_QUERY_SERVICE,
         queryData: _query
       });
-      sessionStorage.removeItem("@fywinnv_current_location");
+      sessionStorage.removeItem("@bcn_current_location");
     }
 
     yield put({ type: types.SET_LOADING_LOCATION, loading: false });

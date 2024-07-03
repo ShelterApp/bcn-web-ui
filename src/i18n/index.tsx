@@ -3,8 +3,8 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import locales from "./locales/index";
 i18n.use(LanguageDetector).init({
   debug: true,
-  lng: JSON.parse(localStorage.getItem("@fywinnv_language"))
-    ? JSON.parse(localStorage.getItem("@fywinnv_language"))
+  lng: JSON.parse(localStorage.getItem("@bcn_language"))
+    ? JSON.parse(localStorage.getItem("@bcn_language"))
     : "en",
   resources: {
     vi: {

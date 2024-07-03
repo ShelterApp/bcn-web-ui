@@ -4,7 +4,7 @@ import { push } from "connected-react-router";
 import { reducerType } from "redux/reducers";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { Liaison } from "@fywinnv/core";
+import { Liaison } from "@bcn/core";
 import HeaderBarSub from "components/HeaderBarSub";
 import Loading from "components/Loading";
 import LiaisonsContainer from "containers/LiaisonsContainer";
