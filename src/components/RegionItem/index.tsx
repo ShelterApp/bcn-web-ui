@@ -33,7 +33,7 @@ const RegionItem = React.memo((props: RegionProps) => {
               href={parseURL(website)}
               className={clsx(classes.hrefLink, classes.pl5)}
             >
-              <MdGlobe color="#5A6EB7" fontSize="18px" />
+              <MdGlobe color="#191970" fontSize="18px" />
             </a>
           )}
         </p>
@@ -44,13 +44,13 @@ const RegionItem = React.memo((props: RegionProps) => {
                 onClick={() => props.openUrl(`/regions/${id}/edit`)}
                 className={clsx(classes.p0, classes.pr10)}
               >
-                <IosCreate color="#5A6EB7" fontSize="18px" />
+                <IosCreate color="#191970" fontSize="18px" />
               </IconButton>
               <IconButton
                 onClick={() => props.handleOpenAlert(id)}
                 className={classes.p0}
               >
-                <MdTrash color="#5A6EB7" fontSize="18px" />
+                <MdTrash color="#191970" fontSize="18px" />
               </IconButton>
             </>
           )}

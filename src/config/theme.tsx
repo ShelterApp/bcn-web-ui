@@ -6,27 +6,27 @@ const RedPink = " #db4437";
 const lightRed = "rgba(219, 68, 55, 0.15)";
 
 const theme: object = {
-    //backGround
-    bg: lightGray,
-    bgContainer: "white",
-    bgButton: "#5A6EB7",
-    bgError: lightRed,
-    bgHover: lightGray,
+  //backGround
+  bg: lightGray,
+  bgContainer: "white",
+  bgButton: "#191970",
+  bgError: lightRed,
+  bgHover: lightGray,
 
-    //text
-    textExplanation: Gray,
-    textLabel: hardGary,
-    textError: Red,
-    icon: Gray,
-    warnIcon: RedPink,
-    //other
-    breakpoints: {
-        xs: 0,
-        sm: 576,
-        md: 768,
-        lg: 992,
-        xl: 1200,
-    },
+  //text
+  textExplanation: Gray,
+  textLabel: hardGary,
+  textError: Red,
+  icon: Gray,
+  warnIcon: RedPink,
+  //other
+  breakpoints: {
+    xs: 0,
+    sm: 576,
+    md: 768,
+    lg: 992,
+    xl: 1200
+  }
 };
 
 export default theme;

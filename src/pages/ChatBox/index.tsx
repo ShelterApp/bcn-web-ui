@@ -386,7 +386,7 @@ const Chatbox = React.memo((props: ChatboxProps) => {
             {...props}
             wrapperStyle={{
               right: {
-                backgroundColor: "#5A6EB7",
+                backgroundColor: "#191970",
                 color: "#fff"
               },
               left: {
@@ -403,7 +403,7 @@ const Chatbox = React.memo((props: ChatboxProps) => {
         {...props}
         wrapperStyle={{
           right: {
-            backgroundColor: "#5A6EB7",
+            backgroundColor: "#191970",
             color: "#fff"
           }
         }}

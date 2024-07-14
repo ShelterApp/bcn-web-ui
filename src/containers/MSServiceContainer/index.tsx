@@ -14,186 +14,180 @@ import Checkbox from "@material-ui/core/Checkbox";
 import MdCheckboxOutline from "react-ionicons/lib/MdCheckboxOutline";
 
 interface MSServiceProps {
-    data: ServiceProps;
-    openUrl: Function;
-    onDelete: Function;
-    handleOpenAlert: Function;
-    approval?: boolean | false;
-    handleCheck?: Function;
+  data: ServiceProps;
+  openUrl: Function;
+  onDelete: Function;
+  handleOpenAlert: Function;
+  approval?: boolean | false;
+  handleCheck?: Function;
 }
 
 const MSService = React.memo((props: MSServiceProps) => {
-    const { data, openUrl, handleOpenAlert, approval } = props;
-    const translate = useTranslation().t;
-    const {
-        name,
-        description,
-        contactEmail,
-        address1,
-        city,
-        state,
-        zip,
-        phone,
-        website,
-        type,
-        serviceSummary,
-        category,
-        age,
-        schedules,
-        isApproved,
-        id,
-        isContact,
-        userEmail,
-        managedUsers,
-    } = data;
-    const address = { address1, city, state, zip };
-    const lastAddress = Object.keys(address).map((ad) => `${address[ad]}`);
-    const lastSchedules = schedules && tranformSchedulesForm(schedules);
+  const { data, openUrl, handleOpenAlert, approval } = props;
+  const translate = useTranslation().t;
+  const {
+    name,
+    description,
+    contactEmail,
+    address1,
+    city,
+    state,
+    zip,
+    phone,
+    website,
+    type,
+    serviceSummary,
+    category,
+    age,
+    schedules,
+    isApproved,
+    id,
+    isContact,
+    userEmail,
+    managedUsers
+  } = data;
+  const address = { address1, city, state, zip };
+  const lastAddress = Object.keys(address).map(ad => `${address[ad]}`);
+  const lastSchedules = schedules && tranformSchedulesForm(schedules);
 
-    const classes = styles();
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-    const handleClick = (event: React.MouseEvent<any>) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const [isCheck, setIsCheck] = useState(false);
-    const handleCheck = () => {
-        setIsCheck(!isCheck);
-        props.handleCheck && props.handleCheck(id);
-    };
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
+  const classes = styles();
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const handleClick = (event: React.MouseEvent<any>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const [isCheck, setIsCheck] = useState(false);
+  const handleCheck = () => {
+    setIsCheck(!isCheck);
+    props.handleCheck && props.handleCheck(id);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-    const handleDelete = () => {
-        setAnchorEl(null);
-        handleOpenAlert(data.id);
-    };
+  const handleDelete = () => {
+    setAnchorEl(null);
+    handleOpenAlert(data.id);
+  };
 
-    const handleEdit = () => {
-        setAnchorEl(null);
-        openUrl(`/services/${data.id}/edit`);
-    };
+  const handleEdit = () => {
+    setAnchorEl(null);
+    openUrl(`/services/${data.id}/edit`);
+  };
 
-    return (
-        <>
-            <div className={classes.borderItem}>
-                <div className={classes.name}>
-                    <p>{name}</p>
-                    {approval ? (
-                        <Checkbox
-                            className={classes.p0}
-                            checkedIcon={
-                                <MdCheckboxOutline
-                                    color="#5A6EB7"
-                                    fontSize="26px"
-                                />
-                            }
-                            name={""}
-                            checked={isCheck}
-                            onChange={(e) => {
-                                if (typeof handleCheck !== "function")
-                                    return null;
-                                handleCheck();
-                            }}
-                        />
-                    ) : (
-                        <div onClick={handleClick}>
-                            <MoreHorizIcon fontSize="small" />
-                        </div>
-                    )}
-                    <Menu
-                        id="simple-menu"
-                        anchorEl={anchorEl}
-                        keepMounted
-                        open={Boolean(anchorEl)}
-                        onClose={handleClose}
-                    >
-                        <MenuItem onClick={handleEdit}>
-                            {translate("EDIT_SERVICE")}
-                        </MenuItem>
-                        <MenuItem onClick={handleDelete}>
-                            {translate("DELETE_SERVICE")}
-                        </MenuItem>
-                    </Menu>
-                </div>
-                {!!userEmail && <p>Owned By: {userEmail}</p>}
-                <p>Address: {lastAddress.join(", ")}</p>
-                <p>Phone: {phone}</p>
-                <p>Email: {contactEmail}</p>
-                <p>Website: {website}</p>
-                <p>Services: {type.join(", ")}</p>
-                <p>Service Detail (Visible to Users): {serviceSummary}</p>
-                <p>Categories: {category.join(", ")}</p>
-                <p>Age Group: {age}</p>
-                {lastSchedules.length > 0 && (
-                    <>
-                        <p>Schedule:</p>
-                        {lastSchedules.map((s, idx) => (
-                            <p key={idx}>
-                                <span className={classes.w30}>{s.title}</span>
-                                <span className={classes.w70}>{s.date}</span>
-                            </p>
-                        ))}
-                    </>
-                )}
-                {isContact && <p>{translate("IS_SHOW_CONTACT")}</p>}
-                {/* <br /> */}
-                <p>Service Description: {description}</p>
-                <p>
-                    Managed By:{" "}
-                    {(managedUsers as Array<any>)
-                        .map((item: any) => item.email)
-                        .join(", ")}
-                </p>
-
-                {!approval && (
-                    <p
-                        className={clsx({
-                            [classes.textApproved]: isApproved,
-                            [classes.textNotApproved]: !isApproved,
-                        })}
-                    >
-                        {translate(
-                            isApproved
-                                ? "THIS_SERVICE_IS_APPROVED"
-                                : "THIS_SERVICE_IS_NOT_APPROVED"
-                        )}
-                    </p>
-                )}
-
-                <Grid
-                    style={{ paddingTop: "10px", paddingBottom: "10px" }}
-                    container
-                    spacing={1}
-                    direction="row"
-                >
-                    <Grid item xs={6} sm={6} md={6} lg={6}>
-                        <ButtonGroup fullWidth>
-                            <SubmitButton
-                                variant="contained"
-                                onClick={() =>
-                                    openUrl(`/services/${data.id}/edit`)
-                                }
-                            >
-                                {translate("EDIT_SERVICE")}
-                            </SubmitButton>
-                        </ButtonGroup>
-                    </Grid>
-                    <Grid item xs={6} sm={6} md={6} lg={6}>
-                        <ButtonGroup fullWidth>
-                            <SubmitButton
-                                onClick={() => handleOpenAlert(data.id)}
-                                variant="contained"
-                                className={classes.bgRed}
-                            >
-                                {translate("DELETE_SERVICE")}
-                            </SubmitButton>
-                        </ButtonGroup>
-                    </Grid>
-                </Grid>
+  return (
+    <>
+      <div className={classes.borderItem}>
+        <div className={classes.name}>
+          <p>{name}</p>
+          {approval ? (
+            <Checkbox
+              className={classes.p0}
+              checkedIcon={
+                <MdCheckboxOutline color="#191970" fontSize="26px" />
+              }
+              name={""}
+              checked={isCheck}
+              onChange={e => {
+                if (typeof handleCheck !== "function") return null;
+                handleCheck();
+              }}
+            />
+          ) : (
+            <div onClick={handleClick}>
+              <MoreHorizIcon fontSize="small" />
             </div>
-        </>
-    );
+          )}
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleEdit}>
+              {translate("EDIT_SERVICE")}
+            </MenuItem>
+            <MenuItem onClick={handleDelete}>
+              {translate("DELETE_SERVICE")}
+            </MenuItem>
+          </Menu>
+        </div>
+        {!!userEmail && <p>Owned By: {userEmail}</p>}
+        <p>Address: {lastAddress.join(", ")}</p>
+        <p>Phone: {phone}</p>
+        <p>Email: {contactEmail}</p>
+        <p>Website: {website}</p>
+        <p>Services: {type.join(", ")}</p>
+        <p>Service Detail (Visible to Users): {serviceSummary}</p>
+        <p>Categories: {category.join(", ")}</p>
+        <p>Age Group: {age}</p>
+        {lastSchedules.length > 0 && (
+          <>
+            <p>Schedule:</p>
+            {lastSchedules.map((s, idx) => (
+              <p key={idx}>
+                <span className={classes.w30}>{s.title}</span>
+                <span className={classes.w70}>{s.date}</span>
+              </p>
+            ))}
+          </>
+        )}
+        {isContact && <p>{translate("IS_SHOW_CONTACT")}</p>}
+        {/* <br /> */}
+        <p>Service Description: {description}</p>
+        <p>
+          Managed By:{" "}
+          {(managedUsers as Array<any>)
+            .map((item: any) => item.email)
+            .join(", ")}
+        </p>
+
+        {!approval && (
+          <p
+            className={clsx({
+              [classes.textApproved]: isApproved,
+              [classes.textNotApproved]: !isApproved
+            })}
+          >
+            {translate(
+              isApproved
+                ? "THIS_SERVICE_IS_APPROVED"
+                : "THIS_SERVICE_IS_NOT_APPROVED"
+            )}
+          </p>
+        )}
+
+        <Grid
+          style={{ paddingTop: "10px", paddingBottom: "10px" }}
+          container
+          spacing={1}
+          direction="row"
+        >
+          <Grid item xs={6} sm={6} md={6} lg={6}>
+            <ButtonGroup fullWidth>
+              <SubmitButton
+                variant="contained"
+                onClick={() => openUrl(`/services/${data.id}/edit`)}
+              >
+                {translate("EDIT_SERVICE")}
+              </SubmitButton>
+            </ButtonGroup>
+          </Grid>
+          <Grid item xs={6} sm={6} md={6} lg={6}>
+            <ButtonGroup fullWidth>
+              <SubmitButton
+                onClick={() => handleOpenAlert(data.id)}
+                variant="contained"
+                className={classes.bgRed}
+              >
+                {translate("DELETE_SERVICE")}
+              </SubmitButton>
+            </ButtonGroup>
+          </Grid>
+        </Grid>
+      </div>
+    </>
+  );
 });
 
 export default MSService;

@@ -75,9 +75,9 @@ const FeedbackItem = React.memo((props: FeedbackProps) => {
         <div className={classes.dFlex}>
           <div className={classes.pr5}>
             {type === "SERVICE" ? (
-              <MdFlag color="#5A6EB7" fontSize="18px" />
+              <MdFlag color="#191970" fontSize="18px" />
             ) : (
-              <IosCreate color="#5A6EB7" fontSize="18px" />
+              <IosCreate color="#191970" fontSize="18px" />
             )}
           </div>
           {subject}
@@ -86,7 +86,7 @@ const FeedbackItem = React.memo((props: FeedbackProps) => {
           {files.length > 0 && (
             <div className={classes.dFlex}>
               <IconButton onClick={() => openImage()} className={classes.p0}>
-                <MdPhotos color="#5A6EB7" fontSize="18px" />
+                <MdPhotos color="#191970" fontSize="18px" />
               </IconButton>
             </div>
           )}
@@ -100,7 +100,7 @@ const FeedbackItem = React.memo((props: FeedbackProps) => {
                   onClick={() => clickLocation()}
                   className={classes.p0}
                 >
-                  <MdPin color="#5A6EB7" fontSize="18px" />
+                  <MdPin color="#191970" fontSize="18px" />
                 </IconButton>
               </div>
             )}
@@ -131,7 +131,7 @@ const FeedbackItem = React.memo((props: FeedbackProps) => {
             href={orgnizationWebsite}
             className={classes.hrefLink}
           >
-            <MdGlobe color="#5A6EB7" fontSize="18px" />
+            <MdGlobe color="#191970" fontSize="18px" />
           </a>
         </div>
       )}
@@ -175,14 +175,14 @@ const FeedbackItem = React.memo((props: FeedbackProps) => {
               onClick={() => props.handleArchive(id)}
               className={clsx(classes.p0, classes.pr10)}
             >
-              <MdArchive color="#5A6EB7" fontSize="18px" />
+              <MdArchive color="#191970" fontSize="18px" />
             </IconButton>
           )}
           <IconButton
             onClick={() => props.handleDelete(id)}
             className={classes.p0}
           >
-            <MdTrash color="#5A6EB7" fontSize="18px" />
+            <MdTrash color="#191970" fontSize="18px" />
           </IconButton>
         </div>
       </div>

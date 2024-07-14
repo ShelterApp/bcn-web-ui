@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-Please install node verion
+Please install node version 18+
 In the project directory, you can run:
 
 ### `yarn install`

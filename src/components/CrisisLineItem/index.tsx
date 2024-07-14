@@ -48,7 +48,7 @@ const CrisisLineItem = React.memo((props: CrisisLineProps) => {
               href={parseURL(chatWebLink)}
               className={clsx(classes.hrefLink, classes.pr10)}
             >
-              <MdChatboxes color="#5A6EB7" fontSize="18px" />
+              <MdChatboxes color="#191970" fontSize="18px" />
             </a>
           )}
           {!!website && (
@@ -58,7 +58,7 @@ const CrisisLineItem = React.memo((props: CrisisLineProps) => {
               href={parseURL(website)}
               className={classes.hrefLink}
             >
-              <MdGlobe color="#5A6EB7" fontSize="18px" />
+              <MdGlobe color="#191970" fontSize="18px" />
             </a>
           )}
         </div>
@@ -79,7 +79,7 @@ const CrisisLineItem = React.memo((props: CrisisLineProps) => {
           <span className={classes.itemPhone}>
             {text && (
               <>
-                <IosChatboxes color="#5A6EB7" fontSize="18px" />
+                <IosChatboxes color="#191970" fontSize="18px" />
                 {text}
               </>
             )}
@@ -110,13 +110,13 @@ const CrisisLineItem = React.memo((props: CrisisLineProps) => {
                 onClick={() => props.openUrl(`/crisis_lines/${id}/edit`)}
                 className={clsx(classes.p0, classes.pr10)}
               >
-                <IosCreate color="#5A6EB7" fontSize="18px" />
+                <IosCreate color="#191970" fontSize="18px" />
               </IconButton>
               <IconButton
                 onClick={() => props.handleOpenAlert(id)}
                 className={classes.p0}
               >
-                <MdTrash color="#5A6EB7" fontSize="18px" />
+                <MdTrash color="#191970" fontSize="18px" />
               </IconButton>
             </>
           )}

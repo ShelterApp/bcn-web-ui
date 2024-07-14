@@ -160,7 +160,7 @@ const SideBar = React.memo((props: SideBarProps) => {
       <Divider />
       <ListItem className={classes.optMenu} button>
         <ListItemIcon>
-          <IosTime color="#5A6EB7" fontSize="18px" />
+          <IosTime color="#191970" fontSize="18px" />
         </ListItemIcon>
         <ListItemText primary={translate("OPEN_SERVICES")} />
         <Typography component="div">
@@ -221,7 +221,7 @@ const SideBar = React.memo((props: SideBarProps) => {
       <Divider />
       <ListItem className={classes.optMenu} button>
         <ListItemIcon>
-          <IosMapOutline color="#5A6EB7" fontSize="18px" />
+          <IosMapOutline color="#191970" fontSize="18px" />
         </ListItemIcon>
         <ListItemText primary={translate("MAP_VIEW")} />
         <Typography component="div">
@@ -243,7 +243,7 @@ const SideBar = React.memo((props: SideBarProps) => {
         <>
           <ListItem className={classes.optMenu} button>
             <ListItemIcon>
-              <MdThumbsUp color="#5A6EB7" fontSize="18px" />
+              <MdThumbsUp color="#191970" fontSize="18px" />
             </ListItemIcon>
             <ListItemText primary={translate("TOP_KUDOS")} />
             <Typography component="div">
@@ -355,7 +355,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                 </ListItemIcon>
                 <ListItemText primary={translate("ADD_CRISIS_LINE")} />
               </ListItem>
-              {/* <Divider />
+              <Divider />
               <ListItem
                 onClick={() => openUrl("/liaisons/new")}
                 className={classes.optMenu}
@@ -365,8 +365,8 @@ const SideBar = React.memo((props: SideBarProps) => {
                   <AddCircleIcon className={classes.iconM} />
                 </ListItemIcon>
                 <ListItemText primary={translate("ADD_LIAISON")} />
-              </ListItem> */}
-              {/* <Divider />
+              </ListItem>
+              <Divider />
               <ListItem
                 onClick={() => openUrl("/regions/new")}
                 className={classes.optMenu}
@@ -376,8 +376,8 @@ const SideBar = React.memo((props: SideBarProps) => {
                   <AddCircleIcon className={classes.iconM} />
                 </ListItemIcon>
                 <ListItemText primary={translate("ADD_REGIONS")} />
-              </ListItem> */}
-              {/* <Divider />
+              </ListItem>
+              <Divider />
               <ListItem
                 onClick={() => openUrl("/coordinators/new")}
                 className={classes.optMenu}
@@ -387,12 +387,12 @@ const SideBar = React.memo((props: SideBarProps) => {
                   <AddCircleIcon className={classes.iconM} />
                 </ListItemIcon>
                 <ListItemText primary={translate("ADD_COORDINATOR")} />
-              </ListItem> */}
+              </ListItem>
             </>
           )}
           <Divider />
 
-          {/* {role !== "admin" && current_user.roles.includes(UserRole.SuperUser) && (
+          {role !== "admin" && current_user.roles.includes(UserRole.SuperUser) && (
             <>
               <ListItem
                 onClick={() => openUrl("/liaisons/new")}
@@ -406,7 +406,7 @@ const SideBar = React.memo((props: SideBarProps) => {
               </ListItem>
               <Divider />
             </>
-          )} */}
+          )}
 
           <ListItem
             onClick={() => openUrl("/manage_services")}
@@ -414,7 +414,7 @@ const SideBar = React.memo((props: SideBarProps) => {
             button
           >
             <ListItemIcon>
-              <IosKeypad color="#5A6EB7" fontSize="18px" />
+              <IosKeypad color="#191970" fontSize="18px" />
             </ListItemIcon>
             <Badge
               max={9999}
@@ -434,7 +434,7 @@ const SideBar = React.memo((props: SideBarProps) => {
             button
           >
             <ListItemIcon>
-              <IosHappy color="#5A6EB7" fontSize="18px" />
+              <IosHappy color="#191970" fontSize="18px" />
             </ListItemIcon>
             <Badge
               max={9999}
@@ -458,7 +458,7 @@ const SideBar = React.memo((props: SideBarProps) => {
               button
             >
               <ListItemIcon>
-                <MdCheckmarkCircle color="#5A6EB7" fontSize="18px" />
+                <MdCheckmarkCircle color="#191970" fontSize="18px" />
               </ListItemIcon>
               <Badge
                 max={9999}
@@ -481,7 +481,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                 button
               >
                 <ListItemIcon>
-                  <MdUnlock color="#5A6EB7" fontSize="18px" />
+                  <MdUnlock color="#191970" fontSize="18px" />
                 </ListItemIcon>
                 <Badge
                   max={9999}
@@ -504,7 +504,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                 //   button
                 // >
                 //   <ListItemIcon>
-                //     <MdUnlock color="#5A6EB7" fontSize="18px" />
+                //     <MdUnlock color="#191970" fontSize="18px" />
                 //   </ListItemIcon>
                 //   <Badge
                 //     max={9999}
@@ -524,7 +524,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                 //   button
                 // >
                 //   <ListItemIcon>
-                //     <MdPersonAdd color="#5A6EB7" fontSize="18px" />
+                //     <MdPersonAdd color="#191970" fontSize="18px" />
                 //   </ListItemIcon>
                 //   <Badge
                 //     max={9999}
@@ -544,7 +544,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                 button
               >
                 <ListItemIcon>
-                  <MdPersonAdd color="#5A6EB7" fontSize="18px" />
+                  <MdPersonAdd color="#191970" fontSize="18px" />
                 </ListItemIcon>
                 <Badge
                   max={9999}
@@ -567,7 +567,7 @@ const SideBar = React.memo((props: SideBarProps) => {
                 button
               >
                 <ListItemIcon>
-                  <MdContact color="#5A6EB7" fontSize="18px" />
+                  <MdContact color="#191970" fontSize="18px" />
                 </ListItemIcon>
                 <ListItemText primary={translate("MANAGE_PROFILE")} />
               </ListItem>
@@ -621,7 +621,7 @@ const SideBar = React.memo((props: SideBarProps) => {
             button
           >
             <ListItemIcon>
-              <IosCreate color="#5A6EB7" fontSize="18px" />
+              <IosCreate color="#191970" fontSize="18px" />
             </ListItemIcon>
             <ListItemText primary={translate("GIVE_FEEDBACK")} />
           </ListItem>
@@ -632,7 +632,7 @@ const SideBar = React.memo((props: SideBarProps) => {
             button
           >
             <ListItemIcon>
-              <MdClipboard color="#5A6EB7" fontSize="18px" />
+              <MdClipboard color="#191970" fontSize="18px" />
             </ListItemIcon>
             <ListItemText primary={translate("TERMS_OF_USE")} />
           </ListItem>
@@ -662,7 +662,7 @@ const SideBar = React.memo((props: SideBarProps) => {
       ) : (
         <>
           <Divider />
-          <ListItem
+          {/* <ListItem
             onClick={() => openUrl("/login")}
             className={classes.optMenu}
             button
@@ -671,7 +671,7 @@ const SideBar = React.memo((props: SideBarProps) => {
               <ExitToAppIcon className={classes.iconM} />
             </ListItemIcon>
             <ListItemText primary={translate("LOGIN_AND_SIGNUP")} />
-          </ListItem>
+          </ListItem> */}
         </>
       )}
     </div>
