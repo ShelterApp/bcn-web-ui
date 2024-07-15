@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: 0
     },
     containerHeader: {
-      height: 44,
+      height: 50,
       minHeight: "unset",
       paddingLeft: 0
     },

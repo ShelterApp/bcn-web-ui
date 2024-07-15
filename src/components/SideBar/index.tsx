@@ -290,7 +290,7 @@ const SideBar = React.memo((props: SideBarProps) => {
           </Grid>
         </Typography>
       </ListItem>
-      {/* <Divider />
+      <Divider />
       <ListItem
         onClick={() => openUrl("/liaisons")}
         className={classes.optMenu}
@@ -304,8 +304,8 @@ const SideBar = React.memo((props: SideBarProps) => {
         </ListItemIcon>
         <ListItemText primary={translate("HOMELESS_LIAISONS")} />
       </ListItem>
-      <Divider /> */}
-      {/* <ListItem
+      <Divider />
+      <ListItem
         onClick={() => openUrl("/coordinators")}
         className={classes.optMenu}
         button
@@ -317,7 +317,7 @@ const SideBar = React.memo((props: SideBarProps) => {
           />
         </ListItemIcon>
         <ListItemText primary={translate("REGIONAL_COORDINATORS")} />
-      </ListItem> */}
+      </ListItem>
       <Divider />
       <ListItem
         onClick={() => openUrl("/my_favorites")}
@@ -601,7 +601,7 @@ const SideBar = React.memo((props: SideBarProps) => {
             <ListItemIcon>
               <InfoIcon className={classes.iconM} />
             </ListItemIcon>
-            <ListItemText primary={translate("ABOUT_FYWINNV")} />
+            <ListItemText primary={translate("ABOUT_BCN")} />
           </ListItem>
           <Divider />
           <ListItem

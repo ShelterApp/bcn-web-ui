@@ -3,7 +3,6 @@ import useToggle from "hooks/useToggle";
 import StyledInput from "./components/StyledInput";
 import InputContainer from "./components/InputContainer";
 import EyeIcon from "./components/EyeIcon";
-// import WarningIcon from './components/WarningIcon';
 import QuestionIcon from "./components/QuestionIcon";
 import Label from "./components/Label";
 import Hint from "./components/Hint";
@@ -22,46 +21,45 @@ import $ from "jquery";
 import clsx from "clsx";
 import Select from "react-select";
 import AsyncSelect from "react-select/async";
-// import 'react-select/dist/css/react-select.css';
 
 interface InputProps {
   label?: string | any;
   type: string;
-  fullWidth?: boolean | undefined;
+  fullWidth?: boolean;
   placeholder?: string;
   value?: any;
-  changeHandler?: Function;
+  changeHandler?: (value: any) => void;
   name: string;
   validate?: any;
   error?: any;
   hint?: string;
-  show_info?: boolean | undefined;
-  required?: boolean | undefined;
-  checked?: boolean | false;
-  options?: any | [];
-  disabled?: boolean | false;
-  loadOptions?: Function;
+  show_info?: boolean;
+  required?: boolean;
+  checked?: boolean;
+  options?: { value: string; label: string }[];
+  disabled?: boolean;
+  loadOptions?: (inputValue: string, callback: (options: any) => void) => void;
 }
 
 const customStyles = {
-  control: (provided, state) => ({
+  control: (provided: any) => ({
     ...provided,
     border: "none",
     borderBottom: "1px solid #dddddd",
     boxShadow: "none"
   }),
-  indicatorSeparator: (provided, state) => ({
+  indicatorSeparator: (provided: any) => ({
     ...provided,
     display: "none"
   }),
-  valueContainer: (provided, state) => ({
+  valueContainer: (provided: any) => ({
     ...provided,
     paddingLeft: "0"
   })
 };
 
 const Input = React.memo((props: InputProps) => {
-  let {
+  const {
     label,
     type,
     fullWidth,
@@ -70,17 +68,17 @@ const Input = React.memo((props: InputProps) => {
     changeHandler,
     name,
     validate,
-    // error,
     hint,
     show_info,
     required,
     checked,
-    options,
+    options = [],
     disabled,
     loadOptions
   } = props;
   const classes = styles();
   const [isShowPassword, toggle] = useToggle(false);
+
   const renderType = (type: string) => {
     switch (type) {
       case "password":
@@ -97,7 +95,8 @@ const Input = React.memo((props: InputProps) => {
         return "text";
     }
   };
-  const [currentValue, setCurrentValue] = React.useState("");
+
+  const [currentValue, setCurrentValue] = React.useState(value);
 
   const checkbox = () => {
     return (
@@ -113,7 +112,7 @@ const Input = React.memo((props: InputProps) => {
                 name={name}
                 checked={checked}
                 onChange={e => {
-                  if (typeof changeHandler !== "function") return null;
+                  if (typeof changeHandler !== "function") return;
                   changeHandler(e.target.checked);
                 }}
               />
@@ -127,14 +126,14 @@ const Input = React.memo((props: InputProps) => {
 
   const selectInput = () => {
     return (
-      <React.Fragment>
+      <>
         {type === "select" && options && (
           <>
             <Label>{label}</Label>
             <NativeSelect
               value={value}
               onChange={e => {
-                if (typeof changeHandler !== "function") return null;
+                if (typeof changeHandler !== "function") return;
                 changeHandler(e.target.value);
               }}
               disableUnderline
@@ -142,29 +141,28 @@ const Input = React.memo((props: InputProps) => {
               className={classes.rootSelect}
               inputProps={{ "aria-label": name }}
             >
-              {options &&
-                options.map((obj, i) => (
-                  <option key={i} value={obj.value}>
-                    {obj.label}
-                  </option>
-                ))}
+              {options.map((obj, i) => (
+                <option key={i} value={obj.value}>
+                  {obj.label}
+                </option>
+              ))}
             </NativeSelect>
           </>
         )}
-      </React.Fragment>
+      </>
     );
   };
 
   const select2Input = () => {
     return (
-      <React.Fragment>
+      <>
         {type === "select2" && options && (
           <>
             <Label>{label}</Label>
             <Select
               value={value}
               onChange={e => {
-                if (typeof changeHandler !== "function") return null;
+                if (typeof changeHandler !== "function") return;
                 changeHandler(e);
               }}
               name={name}
@@ -186,19 +184,19 @@ const Input = React.memo((props: InputProps) => {
               loadOptions={loadOptions}
               value={value}
               onChange={e => {
-                if (typeof changeHandler !== "function") return null;
+                if (typeof changeHandler !== "function") return;
                 changeHandler(e);
               }}
             />
           </>
         )}
-      </React.Fragment>
+      </>
     );
   };
 
   const normalInput = () => {
     return (
-      <React.Fragment>
+      <>
         <Label htmlFor={name}>
           {Boolean(required) && <Italic>* </Italic>}
           {label}
@@ -211,7 +209,7 @@ const Input = React.memo((props: InputProps) => {
               maxRows={5}
               minRows={5}
               onChange={e => {
-                if (typeof changeHandler !== "function") return null;
+                if (typeof changeHandler !== "function") return;
                 changeHandler(e.target.value);
               }}
               value={value}
@@ -225,17 +223,13 @@ const Input = React.memo((props: InputProps) => {
               name={name}
               placeholder={placeholder}
               value={value}
-              inputProps={{
-                maxLength: "14"
-              }}
-              InputProps={{
-                disableUnderline: true
-              }}
+              inputProps={{ maxLength: 14 }}
+              InputProps={{ disableUnderline: true }}
               inputRef={validate}
               fullWidth={fullWidth}
               onChange={e => {
                 setCurrentValue(e.target.value);
-                if (typeof changeHandler !== "function") return null;
+                if (typeof changeHandler !== "function") return;
                 changeHandler(e.target.value);
               }}
             />
@@ -247,13 +241,12 @@ const Input = React.memo((props: InputProps) => {
                 type={renderType(type)}
                 fullWidth={fullWidth}
                 placeholder={placeholder}
-                // error={Boolean(error)}
                 disabled={disabled}
                 value={value}
                 inputRef={validate}
                 onChange={e => {
                   setCurrentValue(e.target.value);
-                  if (typeof changeHandler !== "function") return null;
+                  if (typeof changeHandler !== "function") return;
                   changeHandler(e.target.value);
                 }}
               />
@@ -264,7 +257,7 @@ const Input = React.memo((props: InputProps) => {
             </>
           )}
         </InputContainer>
-      </React.Fragment>
+      </>
     );
   };
 
@@ -276,7 +269,7 @@ const Input = React.memo((props: InputProps) => {
           <DatePicker
             selected={value}
             onChange={e => {
-              if (typeof changeHandler !== "function") return null;
+              if (typeof changeHandler !== "function") return;
               changeHandler(e);
             }}
             name={name}
@@ -299,7 +292,7 @@ const Input = React.memo((props: InputProps) => {
           <DatePicker
             selected={value}
             onChange={e => {
-              if (typeof changeHandler !== "function") return null;
+              if (typeof changeHandler !== "function") return;
               changeHandler(e);
             }}
             name={name}

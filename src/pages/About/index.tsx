@@ -47,7 +47,7 @@ const About = React.memo((props: AboutProps) => {
     <GridFullHeight container>
       <GridFormContainer item xs={12} sm={12} md={12}>
         <GridFullHeight container>
-          <HeaderBarSub openUrl={openUrl} name={translate("ABOUT_FYWINNV")} />
+          <HeaderBarSub openUrl={openUrl} name={translate("ABOUT_BCN")} />
           <Container className={classes.root}>
             <div dangerouslySetInnerHTML={{ __html: content }}></div>
           </Container>
