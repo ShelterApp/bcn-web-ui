@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: "column",
       alignItems: "center",
       width: "75px",
-      color: "#886aea !important",
+      color: "#191970 !important",
       cursor: "pointer",
       marginTop: -30,
       textAlign: "center",
@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: 3
     },
     flagIcon: {
-      color: "#886aea",
+      color: "#191970",
       fontSize: 17
     },
     flaginline: {

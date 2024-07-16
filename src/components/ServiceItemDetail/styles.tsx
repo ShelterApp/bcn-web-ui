@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
     iconCircle: {
       width: 18,
       height: 18,
-      backgroundColor: "#6B46E5",
+      backgroundColor: "#191970",
       borderRadius: 50,
       marginRight: 10,
       color: "white",
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
       wordBreak: "break-word"
     },
     iconFacebook: {
-      color: "#6B46E5 !important"
+      color: "#191970 !important"
     },
     textCenter: {
       textAlign: "center"

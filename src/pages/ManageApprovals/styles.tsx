@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingRight: 0
     },
     title: {
-      color: "#6B46E5",
+      color: "#191970",
       fontSize: 16,
       fontWeight: "bold",
       marginBottom: 0

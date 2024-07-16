@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: 0
     },
     containerHeader: {
-      height: 50,
+      height: 44,
       minHeight: "unset",
       paddingLeft: 0
     },
@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       flexGrow: 1,
       textAlign: "center",
-      fontFamily: "Halyard-Display, sans-serif",
-      fontSize: 18,
+      fontFamily: "Nexa-Bold, sans-serif",
+      fontSize: 21,
       whiteSpace: "nowrap"
     },
     iconphone: {

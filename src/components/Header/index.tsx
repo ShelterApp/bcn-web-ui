@@ -59,8 +59,8 @@ const HeaderBar = React.memo((props: HeaderBarProps) => {
             <RoomIcon />
           </IconButton>
 
-          <Typography variant="h6" className={classes.title}>
-            <img src={logo} height={38} alt="logo" style={{ paddingTop: 7 }} />
+          <Typography variant="h5" className={classes.title}>
+            BIG COUNTRY NAVIGATOR
           </Typography>
 
           <IconButton

@@ -2,11 +2,12 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: -apple-system, Nexa-Light, "Segoe UI", "Nexa-Light", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 20px;
 }
 
 code {
@@ -49,8 +50,15 @@ button.Mui-disabled {
 }
 
 @font-face {
-  font-family: Halyard-Display;
-  src: url(asset/fonts/Halyard-Display.ttf);
+  font-family: Nexa-Light;
+  src: url(asset/fonts/Nexa-Light.otf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Nexa-Bold;
+  src: url(asset/fonts/Nexa-Bold.otf);
   font-weight: 600;
   font-style: normal;
 }

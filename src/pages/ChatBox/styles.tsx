@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme: Theme) =>
     iconCircle: {
       width: 18,
       height: 18,
-      backgroundColor: "#6B46E5",
+      backgroundColor: "#191970",
       borderRadius: 50,
       color: "white",
       padding: 4,

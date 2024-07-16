@@ -136,15 +136,10 @@ const HeaderBarSub = React.memo((props: HeaderBarProps) => {
             </Typography>
           ) : (
             <Typography
-              variant="h6"
+              variant="h5"
               className={clsx({ [classes.fontAzonix]: !name }, classes.title)}
             >
-              <img
-                src={logo}
-                height={38}
-                alt="logo"
-                style={{ paddingTop: 7 }}
-              />
+              BIG COUNTRY NAVIGATOR
             </Typography>
           )}
           {/* <Typography

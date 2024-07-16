@@ -28,8 +28,8 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: -15
     },
     fontAzonix: {
-      fontFamily: "Halyard-Display, sans-serif",
-      fontSize: 18
+      fontFamily: "Nexa-Bold, sans-serif",
+      fontSize: 21
     },
     roomBtn: {
       padding: 0,

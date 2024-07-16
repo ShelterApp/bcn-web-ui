@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingRight: 6
     },
     loadmore: {
-      color: "#6B46E5",
+      color: "#191970",
       fontSize: 30
     },
     textCenter: {
