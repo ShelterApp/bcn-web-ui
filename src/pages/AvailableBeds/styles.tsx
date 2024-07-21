@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
       color: "#191970"
     },
     noText: {
-      fontSize: 14,
+      fontSize: 13,
       color: "gray",
       paddingTop: 140,
       textAlign: "center",

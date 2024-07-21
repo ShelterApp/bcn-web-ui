@@ -20,10 +20,10 @@ const useStyles = makeStyles((theme: Theme) =>
       color: "white"
     },
     title: {
-      flexGrow: 1,
       textAlign: "center",
       fontFamily: "Nexa-Bold, sans-serif",
-      fontSize: 21,
+      fontSize: 17,
+      paddingTop: 3,
       whiteSpace: "nowrap"
     },
     iconphone: {

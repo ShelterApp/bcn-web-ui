@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: 0
     },
     noText: {
-      fontSize: 14,
+      fontSize: 13,
       color: "gray",
       paddingTop: 140,
       textAlign: "center",

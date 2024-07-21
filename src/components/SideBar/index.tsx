@@ -662,7 +662,7 @@ const SideBar = React.memo((props: SideBarProps) => {
       ) : (
         <>
           <Divider />
-          {/* <ListItem
+          <ListItem
             onClick={() => openUrl("/login")}
             className={classes.optMenu}
             button
@@ -671,7 +671,7 @@ const SideBar = React.memo((props: SideBarProps) => {
               <ExitToAppIcon className={classes.iconM} />
             </ListItemIcon>
             <ListItemText primary={translate("LOGIN_AND_SIGNUP")} />
-          </ListItem> */}
+          </ListItem>
         </>
       )}
     </div>

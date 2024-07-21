@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: "center"
     },
     noText: {
-      fontSize: 14,
+      fontSize: 13,
       color: "gray",
       paddingTop: 140,
       textAlign: "center",
