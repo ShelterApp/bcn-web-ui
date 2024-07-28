@@ -58,6 +58,7 @@ export default {
     "Los usuarios no necesitan registrarse. Esto es solo para proveedores de servicios.",
 
   // Service
+  CLOSED_TILL: "Cerrado hasta",
   END_DATE_SHOULD_BE_GREATER:
     "End  ëLa fecha final debe ser igual o mayor que la fecha de inicioí",
   FLAG_AND_DONATE: "Marcar y donarí",

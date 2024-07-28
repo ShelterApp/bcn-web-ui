@@ -56,6 +56,14 @@ export default {
     "Users need not Signup. This is for Service Providers only.",
 
   // Service
+  CLOSED_TILL: "Closed till",
+  PERMANENTLY_CLOSED: "Permanently Closed",
+  DATE_RANGE: "Date range",
+  CLAIM_TITLE: "Claim Service",
+  CLAIM_SERVICE: "Claim Service",
+  SEND: "Send",
+  ANYONE: "Anyone",
+  MILES: "Miles",
   START_DATE: "Start date",
   END_DATE: "End date",
   START_TIME: "Start time",
