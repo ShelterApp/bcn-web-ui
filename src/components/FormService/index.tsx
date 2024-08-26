@@ -73,7 +73,7 @@ const initDefaultValues: IServiceProps = {
   address1: "",
   address2: "",
   city: "",
-  state: "",
+  state: "TX",
   zip: "",
   country: "",
   phone: "",
@@ -283,6 +283,7 @@ const NewService = React.memo((props: NewServiceProps) => {
       isCriticalNeverExpire: isCriticalNeverExpire,
       criticalExpiredAt: parseTime(criticalExpiredAt, criticalExpiredTimeAt),
       country: "No data",
+      state: "TX",
       managedUsers: managedUsers.map(obj => obj.value)
     };
 
@@ -543,29 +544,30 @@ const NewService = React.memo((props: NewServiceProps) => {
               })}
             </ErrorMessage>
           )}
-          <Input
-            name="state"
-            type="string"
-            fullWidth
-            placeholder="CO"
-            label={translate("STATE")}
-            validate={register({
-              required: true
-            })}
-            error={errors.state}
-          />
-          {errors.state && errors.state.type === "required" && (
-            <ErrorMessage>
-              {translate("REQUIRED_INPUT_CTA", {
-                value: translate("STATE")
-              })}
-            </ErrorMessage>
-          )}
+          {/* <Input
+                        name="state"
+                        type="string"
+                        fullWidth
+                        placeholder="TX"
+                        disabled
+                        label={translate("STATE")}
+                        validate={register({
+                            required: true,
+                        })}
+                        error={errors.state}
+                    />
+                    {errors.state && errors.state.type === "required" && (
+                        <ErrorMessage>
+                            {translate("REQUIRED_INPUT_CTA", {
+                                value: translate("STATE"),
+                            })}
+                        </ErrorMessage>
+                    )} */}
           <Input
             name="zip"
             type="string"
             fullWidth
-            placeholder="80202"
+            placeholder="79601"
             label={translate("ZIP")}
             validate={register({
               required: true
@@ -600,7 +602,7 @@ const NewService = React.memo((props: NewServiceProps) => {
             name="phone"
             type="phonenumber"
             fullWidth
-            placeholder="(303) 555-0100"
+            placeholder="(325) 555-0100"
             label={translate("PHONE")}
             validate={register({
               required: false

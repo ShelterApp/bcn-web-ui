@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
       }
     },
     selection: {
-      backgroundColor: "#191970",
+      backgroundColor: "#3d3dbf",
       width: "25%",
       textAlign: "center",
       paddingTop: 5,

@@ -56,7 +56,9 @@ export default {
     "Users need not Signup. This is for Service Providers only.",
 
   // Service
+  OPEN_STILL: "Open until",
   CLOSED_TILL: "Closed till",
+  CLOSED_UNTIL: "Closed until",
   PERMANENTLY_CLOSED: "Permanently Closed",
   DATE_RANGE: "Date range",
   CLAIM_TITLE: "Claim Service",
@@ -382,7 +384,8 @@ export default {
   SLIDE_8:
     " Home Screen for interacting with our AI Powered Chatbot to find services with ease",
   ACCEPT_TERMS: "ACCEPT TERMS",
-  SLIDE_9: "By Clicking I agree, you agree to the FYWINNV App, Inc's ",
+  SLIDE_9:
+    "By Clicking I agree, you agree to the Big Country region of Texas App, Inc's ",
 
   FOOD: "Food",
   SHELTER: "Shelter",
@@ -411,9 +414,9 @@ export default {
   PH_DISPLAY_NAME_SIGNUP: "Ex: Hotel California",
   PH_REGION_NAME: "Ex: Statewide",
   PH_COUNTIES: "Ex: Philadelphia",
-  PH_ADDRESS_1: "Broadway & E Colfax Ave",
-  PH_ADDRESS_2: "Civic Center Park",
-  PH_CITY: "Denver",
+  PH_ADDRESS_1: "Grape St & Anson Ave",
+  PH_ADDRESS_2: "North Park",
+  PH_CITY: "Abilene",
   PH_COUNTRY: "Select Country",
   PH_SERVICE_DETAILS:
     "Ex: Food Pantry, Emergency Shelter, HIV Test, Clothes, GED Training...",

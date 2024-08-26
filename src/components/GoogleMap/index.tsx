@@ -52,6 +52,7 @@ const MapView = React.memo((props: MapViewProps) => {
     }
     setIsDirect(false);
   };
+
   return (
     <GoogleMap
       zoom={13}

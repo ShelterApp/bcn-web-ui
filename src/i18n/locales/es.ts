@@ -58,6 +58,7 @@ export default {
     "Los usuarios no necesitan registrarse. Esto es solo para proveedores de servicios.",
 
   // Service
+  OPEN_STILL: "Aún abierto",
   CLOSED_TILL: "Cerrado hasta",
   END_DATE_SHOULD_BE_GREATER:
     "End  ëLa fecha final debe ser igual o mayor que la fecha de inicioí",
@@ -414,9 +415,9 @@ export default {
   PH_DISPLAY_NAME_SIGNUP: "Ex: Hotel California",
   PH_REGION_NAME: "Ex: Statewide",
   PH_COUNTIES: "Ex: Philadelphia",
-  PH_ADDRESS_1: "Broadway & E Colfax Ave",
-  PH_ADDRESS_2: "Civic Center Park",
-  PH_CITY: "Denver",
+  PH_ADDRESS_1: "Grape St & Anson Ave",
+  PH_ADDRESS_2: "North Park",
+  PH_CITY: "Abilene",
   PH_COUNTRY: "Select Country",
   PH_SERVICE_DETAILS:
     "Ex: Food Pantry, Emergency Shelter, HIV Test, Clothes, GED Training...",

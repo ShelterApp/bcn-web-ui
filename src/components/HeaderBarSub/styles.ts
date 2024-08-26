@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     fontAzonix: {
       fontFamily: "Nexa-Bold, sans-serif",
-      fontSize: 21
+      fontSize: 19,
+      paddingTop: 4
     },
     roomBtn: {
       padding: 0,
