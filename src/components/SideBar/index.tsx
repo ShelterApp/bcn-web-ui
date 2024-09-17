@@ -199,7 +199,7 @@ const SideBar = React.memo((props: SideBarProps) => {
         })}
       </ListItem>
       <ListItem className={classes.listSelections}>
-        {["SENIORS", "DISABLED", "FAMILIES", "LGBT"].map((text, index) => {
+        {["SENIORS", "DISABLED", "FAMILIES", "VETERANS"].map((text, index) => {
           return (
             <span
               className={clsx(
@@ -304,21 +304,21 @@ const SideBar = React.memo((props: SideBarProps) => {
         </ListItemIcon>
         <ListItemText primary={translate("HOMELESS_LIAISONS")} />
       </ListItem>
-      {/* <Divider />
-            <ListItem
-                onClick={() => openUrl("/coordinators")}
-                className={classes.optMenu}
-                button
-            >
-                <ListItemIcon>
-                    <FontAwesomeIcon
-                        icon={faUserTie}
-                        className={clsx(classes.userTieIcon)}
-                    />
-                </ListItemIcon>
-                <ListItemText primary={translate("REGIONAL_COORDINATORS")} />
-            </ListItem>
-            <Divider /> */}
+      <Divider />
+      <ListItem
+        onClick={() => openUrl("/coordinators")}
+        className={classes.optMenu}
+        button
+      >
+        <ListItemIcon>
+          <FontAwesomeIcon
+            icon={faUserTie}
+            className={clsx(classes.userTieIcon)}
+          />
+        </ListItemIcon>
+        <ListItemText primary={translate("REGIONAL_COORDINATORS")} />
+      </ListItem>
+      {/* <Divider /> */}
       <Divider />
       <ListItem
         onClick={() => openUrl("/my_favorites")}
@@ -367,32 +367,28 @@ const SideBar = React.memo((props: SideBarProps) => {
                 </ListItemIcon>
                 <ListItemText primary={translate("ADD_LIAISON")} />
               </ListItem>
-              {/* <Divider />
-                            <ListItem
-                                onClick={() => openUrl("/regions/new")}
-                                className={classes.optMenu}
-                                button
-                            >
-                                <ListItemIcon>
-                                    <AddCircleIcon className={classes.iconM} />
-                                </ListItemIcon>
-                                <ListItemText
-                                    primary={translate("ADD_REGIONS")}
-                                />
-                            </ListItem>
-                            <Divider /> */}
-              {/* <ListItem
-                                onClick={() => openUrl("/coordinators/new")}
-                                className={classes.optMenu}
-                                button
-                            >
-                                <ListItemIcon>
-                                    <AddCircleIcon className={classes.iconM} />
-                                </ListItemIcon>
-                                <ListItemText
-                                    primary={translate("ADD_COORDINATOR")}
-                                />
-                            </ListItem> */}
+              <Divider />
+              <ListItem
+                onClick={() => openUrl("/regions/new")}
+                className={classes.optMenu}
+                button
+              >
+                <ListItemIcon>
+                  <AddCircleIcon className={classes.iconM} />
+                </ListItemIcon>
+                <ListItemText primary={translate("ADD_REGIONS")} />
+              </ListItem>
+              <Divider />
+              <ListItem
+                onClick={() => openUrl("/coordinators/new")}
+                className={classes.optMenu}
+                button
+              >
+                <ListItemIcon>
+                  <AddCircleIcon className={classes.iconM} />
+                </ListItemIcon>
+                <ListItemText primary={translate("ADD_COORDINATOR")} />
+              </ListItem>
             </>
           )}
           <Divider />

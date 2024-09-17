@@ -13,10 +13,20 @@ export const typeCheckboxs = Object.keys(ServiceType).map(type => ({
   isCheck: false
 }));
 
-export const categoryCheckboxs = Object.keys(ScheduleCategory).map(type => ({
-  name: ScheduleCategory[type],
+export const categoryCheckboxs = [
+  "MEN",
+  "WOMEN",
+  "KIDS",
+  "SENIORS",
+  "DISABLED",
+  "FAMILIES",
+  "VETERANS",
+  "ALL"
+].map(type => ({
+  name: type,
   isCheck: false
 }));
+console.log("categoryCheckboxs", categoryCheckboxs);
 
 export interface CheckboxType {
   name: string;

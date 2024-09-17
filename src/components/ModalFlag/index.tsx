@@ -122,7 +122,9 @@ const ModalFlag = React.memo((props: ModalFlagProps) => {
         <Fade in={open}>
           <div className={classes.paper}>
             <h2 className={classes.title}>
-              {translate("CONNECT_TO", { value: serviceNameFlag })}
+              {translate("CONNECT_TO", {
+                value: serviceNameFlag
+              })}
             </h2>
             <form
               className={classes.root}
@@ -176,7 +178,7 @@ const ModalFlag = React.memo((props: ModalFlagProps) => {
                 name="phone"
                 type="phonenumber"
                 fullWidth
-                placeholder="(303) 555-0100"
+                placeholder="325-555-0100"
                 label={translate("PHONE")}
                 validate={register({
                   required: true

@@ -10,6 +10,7 @@ export default {
   DISABLED: "Discapac",
   FAMILIES: "Familias",
   LGBT: "LGTB+",
+  VETERANS: "Veterans",
 
   // Authencation
   SERVICE_PROVIDER_LOGIN: "Inicio de sesiÛn de proveedor de servicios",
@@ -127,8 +128,7 @@ export default {
   NO_DATA_SERVICES: "No se encontraron Serviciosí",
   DESC_LESS_THAN_VALUE: "DescripciÛn en menos de {{value}} caracteresí",
   CONNECT_WITH_US: "Conectarse a este servicio?í",
-  REPORT_SERVICE_INFO:
-    "Click here to Report Incorrect Info or\n  Claim this Service",
+  REPORT_SERVICE_INFO: "Report Incorrect Info",
   LAST_UPDATE_ON: "Fecha de ˙ltima modificaciÛní",
   OPEN_24H: "Abierto las 24 horasí",
   TODAY_AT: "Hoy a lasí",
@@ -374,7 +374,7 @@ export default {
     "Tabs at the bottom of Home screen will help you navigate to resources like Food, Shelter, Health, Resources & Education. Each tab has Sub Tabs on top of them like Clothes, Hygiene, Tech, etc., to help narrow your search.",
   CLICK_ON: "Clicking on ",
   SLIDE_4:
-    " at the top of the Home Screen will take you to Options Menu where you can filter services based on Category like Youth, LGBT, Women,.. Services that are Open Now, Map View, Crisis Lines, My Favorites, etc.",
+    " at the top of the Home Screen will take you to Options Menu where you can filter services based on Category like Youth, Veterans, Women,.. Services that are Open Now, Map View, Crisis Lines, My Favorites, etc.",
   SLIDE_5:
     "You can click on Crisis Lines in Options Menu to reach out to National Hotlines for emotional support. You can also search for Crisis Lines or Services using ",
   SLIDE_6:
@@ -386,7 +386,7 @@ export default {
   SLIDE_8:
     " Home Screen for interacting with our AI Powered Chatbot to find services with ease",
   ACCEPT_TERMS: "ACCEPT TERMS",
-  SLIDE_9: "By Clicking I agree, you agree to the App, Inc's ",
+  SLIDE_9: "By Clicking I agree, you agree to the Big Country Navigator Apps, ",
 
   FOOD: "Comida",
   SHELTER: "Shelter",

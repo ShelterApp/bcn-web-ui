@@ -83,8 +83,8 @@ const ServiceItem = React.memo((props: ServiceItemProps) => {
   const isYouthKid = isOnlyOne && category[0] === ScheduleCategory.Kids;
   const isMen = isOnlyOne && category[0] === ScheduleCategory.Men;
   const isWomen = isOnlyOne && category[0] === ScheduleCategory.Women;
-  const isLGBT = isOnlyOne && category[0] === ScheduleCategory.Lgbt;
-  const isExpectedCate = isYouthKid || isMen || isWomen || isLGBT;
+  const isVeterans = isOnlyOne && category[0] === ScheduleCategory.Veterans;
+  const isExpectedCate = isYouthKid || isMen || isWomen || isVeterans;
   const lastCategory = (category.indexOf("ALL") !== -1
     ? [translate("ANYONE")]
     : category.map(a => translate(a))
@@ -181,16 +181,14 @@ const ServiceItem = React.memo((props: ServiceItemProps) => {
                 {withAge}
               </p>
             )}
-            {isLGBT && (
-              <p className={classes.description}>
-                <MdTransgender
-                  color="gray"
-                  fontSize="20px"
-                  className={classes.icon}
-                />
-                {withAge}
-              </p>
-            )}
+            <p className={classes.description}>
+              <MdTransgender
+                color="gray"
+                fontSize="20px"
+                className={classes.icon}
+              />
+              {withAge}
+            </p>
           </div>
         ) : (
           <p onClick={goToDetail} className={classes.description}>

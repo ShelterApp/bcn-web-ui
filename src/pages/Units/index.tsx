@@ -57,7 +57,7 @@ const Units = React.memo((props: UnitsProps) => {
   const handleResult = async () => {
     setLoading(true);
     let res = await axios(
-      "https://api.fywinnv.app/common/regional-coordinators",
+      "https://api.bigcountrynavigator.com/common/regional-coordinators",
       {
         method: "get",
         headers: {

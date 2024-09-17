@@ -48,12 +48,15 @@ const Liaisons = React.memo((props: LiaisonsProps) => {
 
   const handleResult = async () => {
     setLoading(true);
-    let res = await axios("https://api.fywinnv.app/common/homeless-liaison", {
-      method: "get",
-      headers: {
-        "Access-Control-Allow-Origin": "*"
+    let res = await axios(
+      "https://api.bigcountrynavigator.com/common/homeless-liaison",
+      {
+        method: "get",
+        headers: {
+          "Access-Control-Allow-Origin": "*"
+        }
       }
-    });
+    );
     if (res && res.data) {
       let groupCounty = res.data;
       setAllData(groupCounty);

@@ -203,7 +203,7 @@ const FormLiaison = React.memo((props: FormLiaisonProps) => {
             name="phone"
             type="string"
             fullWidth
-            placeholder="(303) 555-0100"
+            placeholder="325-555-0100"
             label={translate("PHONE")}
             validate={register({
               required: true

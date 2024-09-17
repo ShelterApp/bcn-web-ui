@@ -229,8 +229,7 @@ const SearchBar = React.memo((props: SearchBarProps) => {
   const fetchDataSearchHomePage = type => {
     const query = {
       ...initQuerySearch,
-      q: debouncedSearchTerm,
-      type: type || queryData.type
+      q: debouncedSearchTerm
     };
     dispatch({
       type: GET_SERVICES_REDUCER,

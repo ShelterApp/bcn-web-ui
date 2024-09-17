@@ -77,7 +77,7 @@ const SignupForm = React.memo((props: SignupProps) => {
         name="phone"
         type="phonenumber"
         fullWidth
-        placeholder="(303) 555-0100"
+        placeholder="325-555-0100"
         label="PHONE"
         validate={register({
           required: false

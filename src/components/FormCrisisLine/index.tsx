@@ -159,7 +159,7 @@ const FormCrisisLine = React.memo((props: FormCrisisLineProps) => {
             name="phone"
             type="phonenumber"
             fullWidth
-            placeholder="(303) 555-0100"
+            placeholder="325-555-0100"
             label={translate("PHONE")}
             validate={register({
               required: true

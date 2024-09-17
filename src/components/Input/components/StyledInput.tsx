@@ -6,7 +6,9 @@ const StyledInput = styled(InputBase)`
   border-bottom: 1px solid #dddddd;
   & > input {
     padding: 0;
-    font-size: 12px;
+    font-size: 13px;
+    background-color: ${({ disabled }) =>
+      disabled ? "#f0f0f0" : "transparent"};
   }
 `;
 

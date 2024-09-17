@@ -128,7 +128,9 @@ const ScrollableTabs = React.memo((props: TabPanelProps) => {
                 classes.cusBtn
               )}
             >
-              {translate(filter.toUpperCase().replace(/ /g, "_"))}
+              {filter === "Education"
+                ? "Learning"
+                : translate(filter.toUpperCase().replace(/ /g, "_"))}
             </Button>
           );
         })}

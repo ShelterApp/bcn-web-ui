@@ -24,6 +24,7 @@ import {
   holiday,
   parseTime
 } from "common/helpers";
+
 import { UserRole, optionType } from "common/";
 import GridFullHeight from "components/GridFullHeight";
 import GridFormContainer from "components/GridFormContainer";
@@ -109,6 +110,7 @@ const NewService = React.memo((props: NewServiceProps) => {
   const [categories, setCategories] = useState<CheckboxType[]>(
     categoryCheckboxs
   );
+
   const [typesAfter, setTypesAfter] = useState([]);
   const [categoriesAfter, setCategoriesAfter] = useState([]);
   const [isContact, setIsContact] = useState(false);
@@ -376,6 +378,7 @@ const NewService = React.memo((props: NewServiceProps) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
     if (initialValues && initialValues.id) {
       reset({
         ...initialValues,
@@ -544,25 +547,26 @@ const NewService = React.memo((props: NewServiceProps) => {
               })}
             </ErrorMessage>
           )}
-          {/* <Input
-                        name="state"
-                        type="string"
-                        fullWidth
-                        placeholder="TX"
-                        disabled
-                        label={translate("STATE")}
-                        validate={register({
-                            required: true,
-                        })}
-                        error={errors.state}
-                    />
-                    {errors.state && errors.state.type === "required" && (
-                        <ErrorMessage>
-                            {translate("REQUIRED_INPUT_CTA", {
-                                value: translate("STATE"),
-                            })}
-                        </ErrorMessage>
-                    )} */}
+          <Input
+            name="state"
+            type="string"
+            fullWidth
+            placeholder="TX"
+            disabled
+            label={translate("STATE")}
+            validate={register({
+              required: true
+            })}
+            error={errors.state}
+          />
+
+          {errors.state && errors.state.type === "required" && (
+            <ErrorMessage>
+              {translate("REQUIRED_INPUT_CTA", {
+                value: translate("STATE")
+              })}
+            </ErrorMessage>
+          )}
           <Input
             name="zip"
             type="string"

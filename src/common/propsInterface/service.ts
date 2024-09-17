@@ -127,7 +127,7 @@ export const initQuery: QueryServiceProps = _initQuery();
 
 const _initQuerySearch = () => {
   var _query: QueryServiceProps = {
-    filter: "type,isApproved",
+    filter: "isApproved",
     isApproved: true,
     limit: PageSize,
     skip: 0,
