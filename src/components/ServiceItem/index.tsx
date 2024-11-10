@@ -181,14 +181,14 @@ const ServiceItem = React.memo((props: ServiceItemProps) => {
                 {withAge}
               </p>
             )}
-            <p className={classes.description}>
+            {/* <p className={classes.description}>
               <MdTransgender
                 color="gray"
                 fontSize="20px"
                 className={classes.icon}
               />
               {withAge}
-            </p>
+            </p> */}
           </div>
         ) : (
           <p onClick={goToDetail} className={classes.description}>

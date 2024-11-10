@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { LOADMORE_LIAISONS_REQUEST } from "redux/reducers/service/actionTypes";
+import {
+  GET_LIAISONS_REQUEST,
+  LOADMORE_LIAISONS_REQUEST
+} from "redux/reducers/service/actionTypes";
 import { push } from "connected-react-router";
 import { reducerType } from "redux/reducers";
 import { connect } from "react-redux";
@@ -16,7 +19,6 @@ import listLocations from "components/FormLiaison/locations";
 import Input from "components/Input";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
-import axios from "axios";
 
 interface LiaisonsProps {
   dispatch: Dispatch;
@@ -38,63 +40,15 @@ const mapStateToProps = (state: reducerType) => {
 };
 
 const Liaisons = React.memo((props: LiaisonsProps) => {
-  const { dispatch, loadingMore, canLoadmore } = props;
-  const [loading, setLoading] = useState(false);
-  const [data, setData] = useState(null);
-  const [allData, setAllData] = useState([]);
-  const [originalData, setOriginalData] = useState(null);
+  const { dispatch, loading, loadingMore, canLoadmore, groupLiaisons } = props;
   const classes = styles();
   const translate = useTranslation().t;
 
-  const handleResult = async () => {
-    setLoading(true);
-    let res = await axios(
-      "https://api.bigcountrynavigator.com/common/homeless-liaison",
-      {
-        method: "get",
-        headers: {
-          "Access-Control-Allow-Origin": "*"
-        }
-      }
-    );
-    if (res && res.data) {
-      let groupCounty = res.data;
-      setAllData(groupCounty);
-      groupCounty = groupCounty.reduce((r, a) => {
-        r[a.county] = r[a.county] || [];
-        r[a.county].push(a);
-        return r;
-      }, Object.create(null));
-      setOriginalData(groupCounty);
-      setData(groupCounty);
-    }
-    setLoading(false);
-  };
-
-  const handleSearch = keyword => {
-    setLoading(true);
-    let newData = allData.filter(
-      (item: any) =>
-        item.company.toLowerCase().includes(keyword.toLowerCase()) ||
-        item.firstName.toLowerCase().includes(keyword.toLowerCase()) ||
-        item.lastName.toLowerCase().includes(keyword.toLowerCase())
-    );
-    newData = newData.reduce((r, a) => {
-      r[a.county] = r[a.county] || [];
-      r[a.county].push(a);
-      return r;
-    }, Object.create(null));
-
-    setData(newData);
-    setLoading(false);
-  };
-
-  const handleCloseSearch = () => {
-    setData(originalData);
-  };
-
   React.useEffect(() => {
-    handleResult();
+    dispatch({
+      type: GET_LIAISONS_REQUEST,
+      params: {}
+    });
     // eslint-disable-next-line
   }, []);
 
@@ -115,11 +69,20 @@ const Liaisons = React.memo((props: LiaisonsProps) => {
     setLocation(e);
 
     if (e === "All Counties") {
-      setData(originalData);
+      dispatch({
+        type: GET_LIAISONS_REQUEST,
+        params: {}
+      });
       return;
     }
 
-    setData({ [e]: originalData[e] });
+    dispatch({
+      type: GET_LIAISONS_REQUEST,
+      params: {
+        search: "county",
+        q: e
+      }
+    });
   };
 
   const locations = [
@@ -131,13 +94,7 @@ const Liaisons = React.memo((props: LiaisonsProps) => {
     <GridFullHeight container>
       <GridFormContainer item xs={12} sm={12} md={12}>
         <GridFullHeight container>
-          <HeaderBarSub
-            handleSearch={handleSearch}
-            handleCloseSearch={handleCloseSearch}
-            openUrl={openUrl}
-            isSearch
-            name={translate("HOMELESS_LIAISONS")}
-          />
+          <HeaderBarSub openUrl={openUrl} isSearch name="Homeless Liaisons" />
           <Container className={clsx(classes.title, classes.dFlex)}>
             <span className={clsx(classes.pr10, classes.center)}>
               {translate("SELECT_COUNTY")}:
@@ -156,36 +113,20 @@ const Liaisons = React.memo((props: LiaisonsProps) => {
           {loading ? (
             <Loading />
           ) : (
-            <>
-              {data && Object.keys(data).length > 0 ? (
-                Object.keys(data).map((key, index) => (
-                  <React.Fragment key={index}>
-                    {key && (
-                      <Container className={classes.title}>
-                        {translate("COUNTY")}: {key}
-                      </Container>
-                    )}
-                    <LiaisonsContainer
-                      openUrl={openUrl}
-                      liaisons={data[key]}
-                      loadmoreFunction={loadmoreFunction}
-                      loadingMore={loadingMore}
-                      canLoadmore={canLoadmore}
-                    />
-                  </React.Fragment>
-                ))
-              ) : (
-                <i
-                  style={{
-                    textAlign: "center",
-                    width: "100%",
-                    paddingTop: 10
-                  }}
-                >
-                  No Homeless Liaisons
-                </i>
-              )}
-            </>
+            Object.keys(groupLiaisons).map((key, index) => (
+              <React.Fragment key={index}>
+                <Container className={classes.title}>
+                  {translate("COUNTY")}: {key}
+                </Container>
+                <LiaisonsContainer
+                  openUrl={openUrl}
+                  liaisons={groupLiaisons[key]}
+                  loadmoreFunction={loadmoreFunction}
+                  loadingMore={loadingMore}
+                  canLoadmore={canLoadmore}
+                />
+              </React.Fragment>
+            ))
           )}
         </GridFullHeight>
       </GridFormContainer>

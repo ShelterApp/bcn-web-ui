@@ -6,6 +6,9 @@ import EmailIcon from "@material-ui/icons/Email";
 import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SubtitlesIcon from "@material-ui/icons/Subtitles";
+import IconButton from "@material-ui/core/IconButton";
+import IosCreate from "react-ionicons/lib/IosCreate";
+import MdTrash from "react-ionicons/lib/MdTrash";
 
 export interface LiaisonProps {
   liaison: any;
@@ -18,14 +21,13 @@ export interface LiaisonProps {
 const LiaisonItem = React.memo((props: LiaisonProps) => {
   const classes = useStyles();
   const {
-    company,
-    firstName,
-    lastName,
-    prefix,
+    id,
+    schoolDistrict,
+    displayName,
     title,
     email,
-    firstPhoneNumber,
-    firstPhoneExtension
+    phone,
+    extension
   } = props.liaison;
 
   return (
@@ -33,7 +35,25 @@ const LiaisonItem = React.memo((props: LiaisonProps) => {
       <div
         className={clsx(classes.title, classes.dFlex, classes.justifyBetween)}
       >
-        <p className={classes.m0}>{company}</p>
+        <p className={classes.m0}>{schoolDistrict}</p>
+        <div className={clsx(classes.second)}>
+          {(props.isAdmin || props.isSuperUser) && (
+            <IconButton
+              onClick={() => props.openUrl(`/liaisons/${id}/edit`)}
+              className={clsx(classes.p0, classes.pr10)}
+            >
+              <IosCreate color="#191970" fontSize="18px" />
+            </IconButton>
+          )}
+          {props.isAdmin && (
+            <IconButton
+              onClick={() => props.handleOpenAlert(id)}
+              className={classes.p0}
+            >
+              <MdTrash color="#191970" fontSize="18px" />
+            </IconButton>
+          )}
+        </div>
       </div>
       <p className={clsx(classes.desc)}>
         <span>
@@ -41,7 +61,7 @@ const LiaisonItem = React.memo((props: LiaisonProps) => {
             icon={faUserTie}
             className={clsx(classes.userTieIcon, classes.pr10)}
           />
-          {` ${prefix}${firstName} ${lastName}`}
+          {` ${displayName}`}
         </span>
       </p>
       <p className={clsx(classes.desc)}>
@@ -50,17 +70,17 @@ const LiaisonItem = React.memo((props: LiaisonProps) => {
           {title}
         </span>
       </p>
-      {firstPhoneNumber && (
+      {phone && (
         <p className={clsx(classes.desc)}>
           <span>
-            {firstPhoneNumber && (
+            {phone && (
               <a
-                href={`tel:${firstPhoneNumber}`}
+                href={`tel:${phone}`}
                 className={clsx(classes.hrefLink, classes.itemPhone)}
               >
                 <CallIcon fontSize="small" className={classes.pr10} />
-                {firstPhoneNumber}
-                {firstPhoneExtension && ` ext. ${firstPhoneExtension}`}
+                {phone}
+                {extension && ` ext. ${extension}`}
               </a>
             )}
           </span>

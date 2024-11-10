@@ -1,11 +1,11 @@
 import React from "react";
 import useStyles from "./styles";
 import clsx from "clsx";
-// import { Unit } from "@bcn/core";
-// import IconButton from "@material-ui/core/IconButton";
-// import IosCreate from "react-ionicons/lib/IosCreate";
-// import MdTrash from "react-ionicons/lib/MdTrash";
-// import { Coordinator } from "common/models/units";
+import { Unit } from "@bcn/core";
+import IconButton from "@material-ui/core/IconButton";
+import IosCreate from "react-ionicons/lib/IosCreate";
+import MdTrash from "react-ionicons/lib/MdTrash";
+import { Coordinator } from "common/models/units";
 import SubtitlesIcon from "@material-ui/icons/Subtitles";
 import CallIcon from "@material-ui/icons/Call";
 import EmailIcon from "@material-ui/icons/Email";
@@ -26,27 +26,16 @@ interface CoordinatorProps {
 
 const UnitItem = React.memo((props: UnitProps) => {
   const classes = useStyles();
-  const { company, unit } = props;
+  const { unit } = props;
+  const { id } = unit[0];
 
   const CoordinatorItem = (props: CoordinatorProps) => {
-    const {
-      name,
-      title,
-      email,
-      phone1Label,
-      phone1,
-      phone1ext,
-      phone2Label,
-      phone2,
-      phone2ext,
-      phone3Label,
-      phone3,
-      phone3ext
-    } = props.coordinator;
+    const { coordinators } = props.coordinator;
+    const unitData = coordinators[0];
+    const { displayName, title, officePhone, extension, email } = unitData;
+
     const phones = [
-      { label: phone1Label, value: phone1, ext: phone1ext },
-      { label: phone2Label, value: phone2, ext: phone2ext },
-      { label: phone3Label, value: phone3, ext: phone3ext }
+      { label: officePhone, value: officePhone, ext: extension }
     ].filter(x => x.value !== "");
     return (
       <div className={classes.card}>
@@ -56,7 +45,7 @@ const UnitItem = React.memo((props: UnitProps) => {
               icon={faUserTie}
               className={clsx(classes.userTieIcon, classes.pr10)}
             />
-            {name}
+            {displayName}
           </span>
           <br />
         </div>
@@ -77,8 +66,7 @@ const UnitItem = React.memo((props: UnitProps) => {
                     classes.pr10
                   )}
                 >
-                  {phone.label && `${phone.label}#`} {phone.value}{" "}
-                  {phone.ext && `ext ${phone.ext}`}{" "}
+                  {phone.value} {phone.ext && `ext ${phone.ext}`}{" "}
                 </a>
               </React.Fragment>
             ))}
@@ -108,11 +96,30 @@ const UnitItem = React.memo((props: UnitProps) => {
           className={clsx(classes.title, classes.dFlex, classes.justifyBetween)}
         >
           <p className={classes.m0}>
-            {company}
+            {unit[0].name}
             <br />
           </p>
+          <div className={clsx(classes.second)}>
+            {props.isAdmin && (
+              <>
+                <IconButton
+                  onClick={() => props.openUrl(`/coordinators/${id}/edit`)}
+                  className={clsx(classes.p0, classes.pr10)}
+                >
+                  <IosCreate color="#191970" fontSize="18px" />
+                </IconButton>
+                <IconButton
+                  onClick={() => props.handleOpenAlert(id)}
+                  className={classes.p0}
+                >
+                  <MdTrash color="#191970" fontSize="18px" />
+                </IconButton>
+              </>
+            )}
+          </div>
         </div>
       </div>
+
       {unit.map((coordinator, key) => (
         <CoordinatorItem key={key} coordinator={coordinator} />
       ))}

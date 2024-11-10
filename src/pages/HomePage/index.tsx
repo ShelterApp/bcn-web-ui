@@ -63,6 +63,7 @@ const HomePage = React.memo((props: HomeProps) => {
   const queryData = useSelector(
     (state: reducerType) => state.service.queryData
   );
+
   const current_user = useSelector(
     (state: reducerType) => state.auth.current_user
   );
@@ -206,6 +207,12 @@ const HomePage = React.memo((props: HomeProps) => {
     }
 
     query = addFilter(query, "type", params.type);
+
+    if (tranformSelected(category) === "ALL") {
+      query = removeFilter(query, "category");
+    } else {
+      query = addFilter(query, "category", tranformSelected(category));
+    }
 
     !loadingLocation &&
       dispatch({

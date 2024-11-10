@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { push } from "connected-react-router";
 import styles from "./styles";
 import useForm from "react-hook-form";
@@ -18,6 +18,7 @@ import { createUnit, updateUnit } from "api/units";
 import FormCoordinator from "./FormCoordinator";
 import CoordinatorItem from "components/CoordinatorItem";
 import { optionType } from "common";
+import { isNumber } from "util";
 
 interface FormUnitProps {
   initialValues?: IUnit;
@@ -34,6 +35,7 @@ const initDefaultValues: IUnit = {
 const FormUnit = React.memo((props: FormUnitProps) => {
   const translate = useTranslation().t;
   const dispatch = useDispatch();
+  const [indexItemUpdated, setIndexItemUpdated] = useState<number | null>(null);
   const { initialValues, isCreate, regions } = props;
   const defaultValues = initialValues ? initialValues : initDefaultValues;
   const { register, errors, handleSubmit, reset } = useForm({
@@ -45,8 +47,17 @@ const FormUnit = React.memo((props: FormUnitProps) => {
   const [error, setError] = useState<null | string>();
   const [region, setRegion] = useState("");
   const [coordinators, setCoordinators] = useState(_coordinators.slice());
+  const formRef = useRef(null);
   const addCoordinators = obj => {
-    setCoordinators([...coordinators, obj]);
+    if (isNumber(indexItemUpdated)) {
+      const newData = coordinators.map((she, idx) =>
+        idx === indexItemUpdated ? obj : she
+      );
+      setCoordinators(newData);
+    } else {
+      setCoordinators([...coordinators, obj]);
+    }
+    setIndexItemUpdated(null);
   };
 
   const onDeleteCoordinator = rowKey => {
@@ -54,6 +65,14 @@ const FormUnit = React.memo((props: FormUnitProps) => {
     const index = newData.findIndex(fa => fa.key === rowKey);
     newData.splice(index, 1);
     setCoordinators(newData);
+  };
+
+  const setItemUpdated = rowKey => {
+    setIndexItemUpdated(rowKey);
+    const itemEdit = coordinators[rowKey];
+    if (itemEdit) {
+      formRef.current.setData(itemEdit);
+    }
   };
 
   const transformCoordinators = coordinators => {
@@ -181,13 +200,14 @@ const FormUnit = React.memo((props: FormUnitProps) => {
         )}
         <fieldset className={classes.fieldset}>
           <legend className={classes.legend}>{translate("COORDINATOR")}</legend>
-          <FormCoordinator addCoordinators={addCoordinators} />
+          <FormCoordinator addCoordinators={addCoordinators} ref={formRef} />
           <div className={classes.root}>
             {transformCoordinators(coordinators).map((coordinator, index) => (
               <CoordinatorItem
                 key={index}
-                keyItem={coordinator.key}
+                keyItem={index}
                 coordinator={coordinator}
+                onUpdate={setItemUpdated}
                 onDeleteCoordinator={onDeleteCoordinator}
               />
             ))}

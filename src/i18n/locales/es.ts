@@ -61,6 +61,12 @@ export default {
   // Service
   OPEN_STILL: "Aún abierto",
   CLOSED_TILL: "Cerrado hasta",
+  CLOSED_UNTIL: "Closed until",
+  PERMANENTLY_CLOSED: "Permanently Closed",
+  DATE_RANGE: "Date range",
+  CLAIM_TITLE: "Claim Service",
+  CLAIM_SERVICE: "Claim Service",
+  CLAIM_FEEDBACK: "Claim Feedback",
   END_DATE_SHOULD_BE_GREATER:
     "End  ëLa fecha final debe ser igual o mayor que la fecha de inicioí",
   FLAG_AND_DONATE: "Marcar y donarí",
@@ -174,6 +180,7 @@ export default {
   DONATE: "Donarí",
 
   TERMS_OF_USE: "TÈrminos de usoí",
+  ADD_ADDRESS: "Add Address",
   ADD_SERVICE: "AÒadir servicioí",
   MANAGE_SERVICES: "Gestionar serviciosí",
   MANAGE_FEEDBACK: "Gestionar opinionesí",
@@ -371,7 +378,7 @@ export default {
   SLIDE_2_2:
     " at the top right of details screen to add that service to My Favorites.",
   SLIDE_3:
-    "Tabs at the bottom of Home screen will help you navigate to resources like Food, Shelter, Health, Resources & Education. Each tab has Sub Tabs on top of them like Clothes, Hygiene, Tech, etc., to help narrow your search.",
+    "Tabs at the bottom of Home screen will help you navigate to resources like Food, Shelter, Health, Resources & Education. Each tab has Sub Tabs on top of them like Clothes, Hygiene, Transit, etc., to help narrow your search.",
   CLICK_ON: "Clicking on ",
   SLIDE_4:
     " at the top of the Home Screen will take you to Options Menu where you can filter services based on Category like Youth, Veterans, Women,.. Services that are Open Now, Map View, Crisis Lines, My Favorites, etc.",
@@ -410,7 +417,7 @@ export default {
   PH_COMMUNITY_SERVICE_NAME: "Non-Profit Name",
   PH_LINE_NAME: "Ex: Domestic Violence Hotline",
   PH_TEXT_NUMBER: "Text number",
-  PH_DISTRICT: "Ex: Allegheny Valley School District",
+  PH_DISTRICT: "Ex: Abilene Independent School District",
   PH_LIAISON_TITLE: "Ex: Supervisor",
   PH_DISPLAY_NAME_SIGNUP: "Ex: Hotel California",
   PH_REGION_NAME: "Ex: Statewide",
@@ -425,5 +432,7 @@ export default {
   PH_AVAILABLE_BEDS: "0 or more",
   PH_AGE_GROUP: "Ex: 18+, 17-21, 24 & under, All Ages, ...",
   PH_FULL_NAME: "Ex: Full Name",
-  PH_COORDINATOR_NAME: "Ex: Center for Schools and Communities"
+  PH_COORDINATOR_NAME: "Ex: Big Country Regional Advisory Council",
+  PH_EMAIL: "AB_EMAIL",
+  PH_EXT: "AB_EXT"
 };

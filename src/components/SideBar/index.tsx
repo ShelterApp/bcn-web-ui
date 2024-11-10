@@ -200,6 +200,7 @@ const SideBar = React.memo((props: SideBarProps) => {
       </ListItem>
       <ListItem className={classes.listSelections}>
         {["SENIORS", "DISABLED", "FAMILIES", "VETERANS"].map((text, index) => {
+          // console.log(category, text);
           return (
             <span
               className={clsx(
@@ -292,6 +293,17 @@ const SideBar = React.memo((props: SideBarProps) => {
       </ListItem>
       <Divider />
       <ListItem
+        onClick={() => openUrl("/my_favorites")}
+        className={classes.optMenu}
+        button
+      >
+        <ListItemIcon>
+          <StarRateIcon className={classes.iconM} />
+        </ListItemIcon>
+        <ListItemText primary={translate("MY_FAVORITES")} />
+      </ListItem>
+      <Divider />
+      <ListItem
         onClick={() => openUrl("/liaisons")}
         className={classes.optMenu}
         button
@@ -318,45 +330,11 @@ const SideBar = React.memo((props: SideBarProps) => {
         </ListItemIcon>
         <ListItemText primary={translate("REGIONAL_COORDINATORS")} />
       </ListItem>
-      {/* <Divider /> */}
       <Divider />
-      <ListItem
-        onClick={() => openUrl("/my_favorites")}
-        className={classes.optMenu}
-        button
-      >
-        <ListItemIcon>
-          <StarRateIcon className={classes.iconM} />
-        </ListItemIcon>
-        <ListItemText primary={translate("MY_FAVORITES")} />
-      </ListItem>
       {role !== "guest" && (
         <>
-          <Divider />
-          <ListItem
-            onClick={() => openUrl("/add_service")}
-            className={classes.optMenu}
-            button
-          >
-            <ListItemIcon>
-              <AddCircleIcon className={classes.iconM} />
-            </ListItemIcon>
-            <ListItemText primary={translate("ADD_SERVICE")} />
-          </ListItem>
           {role === "admin" && (
             <>
-              <Divider />
-              <ListItem
-                onClick={() => openUrl("/crisis_lines/new")}
-                className={classes.optMenu}
-                button
-              >
-                <ListItemIcon>
-                  <AddCircleIcon className={classes.iconM} />
-                </ListItemIcon>
-                <ListItemText primary={translate("ADD_CRISIS_LINE")} />
-              </ListItem>
-              <Divider />
               <ListItem
                 onClick={() => openUrl("/liaisons/new")}
                 className={classes.optMenu}
@@ -389,10 +367,31 @@ const SideBar = React.memo((props: SideBarProps) => {
                 </ListItemIcon>
                 <ListItemText primary={translate("ADD_COORDINATOR")} />
               </ListItem>
+              <Divider />
+              <ListItem
+                onClick={() => openUrl("/crisis_lines/new")}
+                className={classes.optMenu}
+                button
+              >
+                <ListItemIcon>
+                  <AddCircleIcon className={classes.iconM} />
+                </ListItemIcon>
+                <ListItemText primary={translate("ADD_CRISIS_LINE")} />
+              </ListItem>
             </>
           )}
           <Divider />
-
+          <ListItem
+            onClick={() => openUrl("/add_service")}
+            className={classes.optMenu}
+            button
+          >
+            <ListItemIcon>
+              <AddCircleIcon className={classes.iconM} />
+            </ListItemIcon>
+            <ListItemText primary={translate("ADD_SERVICE")} />
+          </ListItem>
+          <Divider />
           {role !== "admin" && current_user.roles.includes(UserRole.SuperUser) && (
             <>
               <ListItem
@@ -591,6 +590,7 @@ const SideBar = React.memo((props: SideBarProps) => {
           )}
         </>
       )}
+
       {(role === "guest" || role === "user") && (
         <>
           <Divider />

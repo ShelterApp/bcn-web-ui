@@ -8,8 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import MdSearch from "react-ionicons/lib/MdSearch";
 import useStyles from "./styles";
 import chatboxImg from "asset/img/chatbox.png";
-import logo from "asset/img/logo.png";
-// import logo from "asset/img/Asset-2.png";
 import SearchBar from "components/Search";
 import ChooseLocation from "components/ChooseLocation";
 import { push } from "connected-react-router";

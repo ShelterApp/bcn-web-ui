@@ -1,5 +1,7 @@
 const location: object[] = [
+  "Adams",
   "Callahan",
+  "Collin",
   "Comanche",
   "Eastland",
   "Fisher",
@@ -11,7 +13,8 @@ const location: object[] = [
   "Shackleford",
   "Stephens",
   "Stonewall",
-  "Taylor"
+  "Taylor",
+  "Throckmorton"
 ].map(item => ({
   value: item,
   label: item

@@ -116,7 +116,7 @@ const FormRegion = React.memo((props: FormRegionProps) => {
           name="website"
           type="string"
           fullWidth
-          placeholder="Ex: https://www.philasd.com/homeless"
+          placeholder="Ex: https://www.esc14.net"
           label={translate("WEBSITE")}
           validate={register({
             required: false
@@ -134,7 +134,7 @@ const FormRegion = React.memo((props: FormRegionProps) => {
           name="counties"
           type="string"
           fullWidth
-          placeholder={translate("PH_COUNTIES")}
+          placeholder="Ex: Taylor"
           label={translate("COUNTIES")}
           validate={register({
             required: false

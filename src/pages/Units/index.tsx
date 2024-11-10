@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-// import { GET_UNITS_REQUEST } from "redux/reducers/service/actionTypes";
+import { GET_UNITS_REQUEST } from "redux/reducers/service/actionTypes";
 import { push } from "connected-react-router";
 import { reducerType } from "redux/reducers";
 import { connect } from "react-redux";
@@ -13,26 +13,11 @@ import Container from "@material-ui/core/Container";
 import styles from "./styles";
 import Input from "components/Input";
 import clsx from "clsx";
+import { getRegions } from "api/regions";
 import UnitsContainer from "containers/UnitsContainer";
+import { parseURL } from "common";
 import { useTranslation } from "react-i18next";
-import axios from "axios";
 
-const regionDetail = {
-  "Region 1": "Philadelphia",
-  "Region 2": "Berks, Chester, Dauphin, Lancaster, Lebanon, Schuylkill",
-  "Region 3":
-    "Adams, Cumberland, Franklin, Mifflin, Huntingdon, Juniata, Perry, York",
-  "Region 4":
-    "Allegheny, Beaver, Bedford, Fayette, Fulton, Greene, Somerset, Washington, Westmoreland",
-  "Region 5":
-    "Butler, Crawford, Clarion, Erie, Forest, Lawrence, McKean, Mercer, Venango, Warren",
-  "Region 6":
-    "Armstrong, Blair, Cambria, Cameron, Centre, Clearfield, Clinton, Elk, Indiana, Jefferson, Potter",
-  "Region 7":
-    "Bradford, Carbon, Columbia, Lackawanna, Luzerne, Lycoming, Monroe, Montour Northumberland, Pike, Snyder, Sullivan, Susquehanna, Tioga, Union, Wayne, Wyoming ",
-  "Region 8": "Bucks, Delaware, Lehigh, Montgomery, Northampton",
-  Statewide: ""
-};
 interface UnitsProps {
   dispatch: Dispatch;
   groupUnits: any;
@@ -47,53 +32,30 @@ const mapStateToProps = (state: reducerType) => {
 };
 
 const Units = React.memo((props: UnitsProps) => {
-  const { dispatch } = props;
-  const [loading, setLoading] = useState(false);
-  const [data, setData] = useState(null);
-  const [allData, setAllData] = useState([]);
-  const [originalData, setOriginalData] = useState(null);
+  const { dispatch, loading, groupUnits } = props;
+
   const classes = styles();
-
-  const handleResult = async () => {
-    setLoading(true);
-    let res = await axios(
-      "https://api.bigcountrynavigator.com/common/regional-coordinators",
-      {
-        method: "get",
-        headers: {
-          "Access-Control-Allow-Origin": "*"
-        }
-      }
-    );
-    if (res && res.data) {
-      let groupData = res.data;
-      setAllData(groupData);
-      groupData = groupData.reduce((r, a) => {
-        const _name = a.regionID ? `Region ${a.regionID}` : "Statewide";
-        r[_name] = r[_name] || [];
-        r[_name].push(a);
-        return r;
-      }, Object.create(null));
-      var stateWide = [...groupData["Statewide"]];
-      // console.log(groupData,'before');
-
-      groupData["Statewide"] = [...stateWide.sort().reverse()];
-      // console.log(Object.keys(groupData),'after');
-      // Object.keys(data)
-      setOriginalData(groupData);
-
-      setData(groupData);
-      // console.log(groupData);
-
-      setRegions(Object.keys(groupData).map(x => ({ label: x, value: x })));
-    }
-    setLoading(false);
-  };
 
   const [regions, setRegions] = useState([]);
 
+  const fetchRegions = async () => {
+    const _regions = await getRegions({});
+    setRegions(
+      _regions.map(r => ({
+        label: r.name,
+        value: r.id,
+        website: r.website,
+        counties: r.counties
+      }))
+    );
+  };
+
   React.useEffect(() => {
-    handleResult();
+    fetchRegions();
+    dispatch({
+      type: GET_UNITS_REQUEST,
+      params: {}
+    });
     // eslint-disable-next-line
   }, []);
 
@@ -107,11 +69,20 @@ const Units = React.memo((props: UnitsProps) => {
     setRegionType(e);
 
     if (e === "All Regions") {
-      setData(originalData);
+      dispatch({
+        type: GET_UNITS_REQUEST,
+        params: {}
+      });
       return;
     }
 
-    setData({ [e]: originalData[e] });
+    dispatch({
+      type: GET_UNITS_REQUEST,
+      params: {
+        filter: "region",
+        region: e
+      }
+    });
   };
 
   var listRegions = [...regions];
@@ -121,33 +92,22 @@ const Units = React.memo((props: UnitsProps) => {
     ...listRegions
   ];
 
-  const handleSearch = keyword => {
-    setLoading(true);
-    let newData = allData.filter(
-      (item: any) =>
-        item.name.toLowerCase().includes(keyword.toLowerCase()) ||
-        item.company.toLowerCase().includes(keyword.toLowerCase()) ||
-        item.phone1.toLowerCase().includes(keyword.toLowerCase()) ||
-        item.phone2.toLowerCase().includes(keyword.toLowerCase()) ||
-        item.email.toLowerCase().includes(keyword.toLowerCase()) ||
-        item.title.toLowerCase().includes(keyword.toLowerCase())
-    );
-    newData = newData.reduce((r, a) => {
-      const _name = a.regionID ? `Region ${a.regionID}` : "Statewide";
-      r[_name] = r[_name] || [];
-      r[_name].push(a);
-      return r;
-    }, Object.create(null));
-
-    setData(newData);
-    setLoading(false);
+  const getWebsite = key => {
+    const region = regions.find(r => r.label === key);
+    return region ? region.website : "";
   };
 
-  const handleCloseSearch = () => {
-    setData(originalData);
+  const getCounties = key => {
+    const region = regions.find(r => r.label === key);
+    return region ? region.counties : "";
   };
 
   const translate = useTranslation().t;
+
+  const newRegions = Object.keys(groupUnits).sort((a, b) => {
+    // Extract numeric part and compare
+    return parseInt(a.split(" ")[2]) - parseInt(b.split(" ")[2]);
+  });
 
   return (
     <GridFullHeight container>
@@ -157,8 +117,6 @@ const Units = React.memo((props: UnitsProps) => {
             openUrl={openUrl}
             isSearch
             name={translate("REGIONAL_COORDINATORS")}
-            handleSearch={handleSearch}
-            handleCloseSearch={handleCloseSearch}
           />
           <Container className={clsx(classes.title, classes.dFlex)}>
             <span className={clsx(classes.pr10, classes.center)}>
@@ -179,31 +137,30 @@ const Units = React.memo((props: UnitsProps) => {
           {loading ? (
             <Loading />
           ) : (
-            <>
-              {data && Object.keys(data).length > 0 ? (
-                Object.keys(data)
-                  .sort()
-                  .map((key, index) => (
-                    <React.Fragment key={index}>
-                      <Container className={classes.title}>
-                        <p className={classes.textLink}>{key}</p>
-                        <p className={classes.pr10}>{regionDetail[key]}</p>
-                      </Container>
-                      <UnitsContainer openUrl={openUrl} units={data[key]} />
-                    </React.Fragment>
-                  ))
-              ) : (
-                <i
-                  style={{
-                    textAlign: "center",
-                    width: "100%",
-                    paddingTop: 10
-                  }}
-                >
-                  No Regional Coordinators
-                </i>
-              )}
-            </>
+            newRegions.map((key, index) => (
+              <React.Fragment key={index}>
+                <Container className={classes.title}>
+                  {getWebsite(key) ? (
+                    <a
+                      className={classes.textLink}
+                      href={parseURL(getWebsite(key))}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {key}
+                    </a>
+                  ) : (
+                    <p className={classes.textLink}>{key}</p>
+                  )}
+                </Container>
+                {getCounties(key) && (
+                  <Container className={classes.counties}>
+                    {`(${translate("COUNTIES")}: ${getCounties(key)})`}
+                  </Container>
+                )}
+                <UnitsContainer openUrl={openUrl} units={groupUnits[key]} />
+              </React.Fragment>
+            ))
           )}
         </GridFullHeight>
       </GridFormContainer>

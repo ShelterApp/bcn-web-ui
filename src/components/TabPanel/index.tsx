@@ -14,6 +14,7 @@ import styles from "./styles";
 import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 const types: string[] = ["FOOD", "SHELTER", "HEALTH", "RESOURCES", "EDUCATION"];
 const params: any = [
@@ -54,6 +55,7 @@ interface TabPanelProps {
 
 const ScrollableTabs = React.memo((props: TabPanelProps) => {
   const classes = styles();
+  const history = useHistory();
   const { dispatch, getFilter, setIsOpenSearch } = props;
   const translate = useTranslation().t;
   const [value, setValue] = React.useState(
@@ -70,6 +72,9 @@ const ScrollableTabs = React.memo((props: TabPanelProps) => {
 
   React.useEffect(() => {
     if (Boolean(JSON.parse(sessionStorage.getItem("@bcnGoBack")))) {
+      if (history.location.pathname === "/") {
+        getFilter({ type: types[value], q: valueFilter });
+      }
       sessionStorage.setItem("@bcnGoBack", JSON.stringify(false));
     } else {
       window.scrollTo(0, 0);
@@ -83,7 +88,7 @@ const ScrollableTabs = React.memo((props: TabPanelProps) => {
       getFilter({ type: types[value], q: valueFilter });
     }
     // eslint-disable-next-line
-  }, []);
+  }, [history]);
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     // setIsOpenSearch(false);
@@ -130,6 +135,8 @@ const ScrollableTabs = React.memo((props: TabPanelProps) => {
             >
               {filter === "Education"
                 ? "Learning"
+                : filter === "Tech"
+                ? "Transit"
                 : translate(filter.toUpperCase().replace(/ /g, "_"))}
             </Button>
           );

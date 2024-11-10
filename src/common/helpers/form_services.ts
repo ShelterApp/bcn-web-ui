@@ -26,7 +26,6 @@ export const categoryCheckboxs = [
   name: type,
   isCheck: false
 }));
-console.log("categoryCheckboxs", categoryCheckboxs);
 
 export interface CheckboxType {
   name: string;

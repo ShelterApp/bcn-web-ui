@@ -76,7 +76,7 @@ const LiaisonsContainer = React.memo((props: LiaisonsProps) => {
   return (
     <>
       <Container className={classes.root}>
-        {liaisons.map((liaison, index) => (
+        {(liaisons.length ? liaisons : []).map((liaison, index) => (
           <LiaisonItem
             key={index}
             liaison={liaison}
